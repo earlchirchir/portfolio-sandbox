@@ -290,15 +290,15 @@ let currentSort = 'featured';
 // DOM Elements
 const reposContainer = document.getElementById('repos-container');
 const repoCountBadge = document.getElementById('repo-count-badge');
-const searchInput = document.getElementById('search-input');
+const searchInput = document.getElementById('repo-search') || document.getElementById('search-input');
 const clearSearchBtn = document.getElementById('clear-search');
 const filterChips = document.getElementById('filter-chips');
-const sortSelect = document.getElementById('sort-select');
+const sortSelect = document.getElementById('repo-sort') || document.getElementById('sort-select');
 
-const statRepos = document.getElementById('stat-repos');
+const statRepos = document.getElementById('repo-count') || document.getElementById('stat-repos');
 const statLanguages = document.getElementById('stat-languages');
-const statStars = document.getElementById('stat-stars');
-const statStatus = document.getElementById('stat-status');
+const statStars = document.getElementById('total-stars') || document.getElementById('stat-stars');
+const statStatus = document.getElementById('live-sync-status') || document.getElementById('stat-status');
 
 // Modals
 const repoModal = document.getElementById('repo-modal');
@@ -338,14 +338,14 @@ function formatRepoTitle(repo) {
 }
 
 function getLanguageClass(lang) {
-  if (!lang) return 'lang-default';
+  if (!lang) return 'lang-other';
   const lower = lang.toLowerCase();
   if (lower.includes('c++')) return 'lang-cpp';
   if (lower.includes('matlab')) return 'lang-matlab';
-  if (lower.includes('hardware') || lower.includes('pcb')) return 'lang-hardware';
-  if (lower.includes('javascript') || lower.includes('js')) return 'lang-javascript';
-  if (lower.includes('jupyter') || lower.includes('python')) return 'lang-jupyter';
-  return 'lang-default';
+  if (lower.includes('hardware') || lower.includes('pcb')) return 'lang-other';
+  if (lower.includes('javascript') || lower.includes('js')) return 'lang-js';
+  if (lower.includes('jupyter') || lower.includes('python')) return 'lang-python';
+  return 'lang-other';
 }
 
 function updateStats() {
@@ -364,7 +364,7 @@ function updateStats() {
 
 async function fetchUserRepos() {
   try {
-    if (statStatus) statStatus.innerHTML = '<i class="fa-solid fa-satellite-dish"></i> GITHUB API: SYNCING';
+    if (statStatus) statStatus.textContent = 'Syncing GitHub...';
     const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`);
     if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 
@@ -391,11 +391,11 @@ async function fetchUserRepos() {
       });
 
       repositories = [...enrichedLive, ...customShowcases];
-      if (statStatus) statStatus.innerHTML = '<i class="fa-solid fa-satellite-dish"></i> GITHUB API: LIVE';
+      if (statStatus) statStatus.textContent = 'GitHub Live Sync';
     }
   } catch (err) {
     console.warn('GitHub API fetch fallback active.', err);
-    if (statStatus) statStatus.innerHTML = '<i class="fa-solid fa-satellite-dish"></i> GITHUB API: CACHED';
+    if (statStatus) statStatus.textContent = 'GitHub Synced';
   } finally {
     updateStats();
     renderRepos();
@@ -404,6 +404,7 @@ async function fetchUserRepos() {
 }
 
 function renderRepos() {
+  if (!reposContainer) return;
   let filtered = repositories.filter(repo => {
     const lowerName = repo.name.toLowerCase();
     if (lowerName.includes('earlchirchir.github.io')) return false;
@@ -431,10 +432,12 @@ function renderRepos() {
   });
 
   filtered.sort((a, b) => {
-    if (currentSort === 'featured') {
+    if (currentSort === 'featured' || currentSort === 'significance') {
       return getSignificanceRank(a.name) - getSignificanceRank(b.name);
     } else if (currentSort === 'updated') {
       return new Date(b.updated_at) - new Date(a.updated_at);
+    } else if (currentSort === 'stars') {
+      return (b.stargazers_count || 0) - (a.stargazers_count || 0);
     } else if (currentSort === 'name') {
       return formatRepoTitle(a).localeCompare(formatRepoTitle(b));
     } else if (currentSort === 'size') {
@@ -444,14 +447,14 @@ function renderRepos() {
   });
 
   if (repoCountBadge) {
-    repoCountBadge.textContent = `${filtered.length} Indexed ${filtered.length === 1 ? 'Project' : 'Projects'}`;
+    repoCountBadge.textContent = `${filtered.length} ${filtered.length === 1 ? 'Project' : 'Projects'}`;
   }
 
   if (filtered.length === 0) {
     reposContainer.innerHTML = `
       <div class="empty-state">
         <p>No engineering projects match your current filter or search criteria.</p>
-        <button type="button" class="btn-industrial btn-sm-mono" onclick="resetFilters()">RESET_FILTERS</button>
+        <button type="button" class="apple-pill-btn apple-pill-sm" onclick="resetFilters()">Reset Filters</button>
       </div>
     `;
     return;
@@ -467,8 +470,8 @@ function renderRepos() {
         <div class="repo-card-header">
           <div class="card-tags-row">
             <span class="lang-pill ${getLanguageClass(repo.language)}">${repo.language || 'Engineering'}</span>
-            ${repo.metric_badge ? `<span class="tag-badge badge-grade"><i class="fa-solid fa-bolt"></i> ${repo.metric_badge}</span>` : ''}
-            ${isPinned ? `<span class="tag-badge badge-pinned">CORE</span>` : ''}
+            ${repo.metric_badge ? `<span class="tag-badge badge-grade">${repo.metric_badge}</span>` : ''}
+            ${isPinned ? `<span class="tag-badge badge-pinned">Flagship</span>` : ''}
           </div>
           <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="repo-ext-icon" title="Open repository on GitHub" aria-label="Open ${repo.name} on GitHub">
             <i class="fa-brands fa-github"></i>
@@ -492,9 +495,9 @@ function renderRepos() {
         ` : ''}
 
         <div class="repo-footer">
-          <span class="repo-meta-code">/${repo.name}</span>
+          <span class="repo-meta-code">Updated ${formatDate(repo.updated_at)}</span>
           <span class="details-btn" data-id="${repo.id}">
-            INSPECT_SPEC <i class="fa-solid fa-arrow-right"></i>
+            Inspect architecture <i class="fa-solid fa-chevron-right"></i>
           </span>
         </div>
       </div>
@@ -529,9 +532,9 @@ function renderBlogArticles() {
     <article class="blog-feature-card spotlight-surface" data-article-id="${article.id}">
       <div class="blog-feature-content">
         <div class="blog-meta-header">
-          <span class="lang-pill lang-cpp"><i class="fa-solid fa-microchip"></i> HACKSTER.IO PUBLICATION</span>
+          <span class="lang-pill lang-cpp">Hackster.io Publication</span>
           <span class="blog-meta-pill">${article.publishedDate}</span>
-          <span class="blog-meta-pill">• ${article.readTime}</span>
+          <span class="blog-meta-pill">· ${article.readTime}</span>
         </div>
 
         <h3 class="blog-feature-title">${article.title}</h3>
@@ -547,15 +550,15 @@ function renderBlogArticles() {
         </div>
 
         <div class="blog-tags-wrap">
-          ${article.tags.map(t => `<span class="topic-chip">#${t}</span>`).join('')}
+          ${article.tags.map(t => `<span class="topic-chip">${t}</span>`).join('')}
         </div>
 
         <div class="blog-actions-row">
-          <button type="button" class="btn-industrial btn-signal" data-article-id="${article.id}">
-            <i class="fa-solid fa-book-open"></i> Open Technical Article &amp; SPI Pinout
+          <button type="button" class="apple-pill-btn apple-pill-lg" data-article-id="${article.id}">
+            Read Technical Article &amp; Pinout
           </button>
-          <a href="${article.repoUrl}" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-steel">
-            <i class="fa-brands fa-github"></i> Firmware Repo
+          <a href="${article.repoUrl}" target="_blank" rel="noopener noreferrer" class="apple-pill-btn apple-pill-glass apple-pill-lg">
+            <i class="fa-brands fa-github"></i> Firmware Source
           </a>
         </div>
       </div>
@@ -564,8 +567,8 @@ function renderBlogArticles() {
         <div class="cyd-bezel">
           <div class="cyd-screen">
             <div class="cyd-topbar">
-              <span>ESP32-2432S022C // 2.4GHz RF</span>
-              <span class="cyd-fps">60 FPS LVGL9</span>
+              <span>ESP32-2432S022C · 2.4GHz RF</span>
+              <span class="cyd-fps">60 fps LVGL 9</span>
             </div>
             <div class="cyd-bars">
               <div class="rf-bar" style="--h: 28%"><span>1</span></div>
@@ -583,8 +586,8 @@ function renderBlogArticles() {
               <div class="rf-bar rf-opt" style="--h: 10%"><span>13</span></div>
             </div>
             <div class="cyd-footer">
-              <span>CH 1 / 6 / 11 TELEMETRY</span>
-              <span class="cyd-opt-tag">OPTIMAL: CH 13</span>
+              <span>Channels 1 / 6 / 11</span>
+              <span class="cyd-opt-tag">Optimal: Ch 13</span>
             </div>
           </div>
         </div>
@@ -770,14 +773,14 @@ function initCommandPalette() {
   if (!cmdModal || !cmdInput || !cmdList) return;
 
   const commands = [
-    { title: '01 // ABB GoFa Trajectory Workbench (Run Simulation)', cat: 'Interactive Lab', icon: 'fa-robot', action: () => scrollToSection('spotlight-section') },
-    { title: '02 // Flagship Embedded & IIoT Systems', cat: 'Architecture', icon: 'fa-microchip', action: () => scrollToSection('flagship-section') },
-    { title: '03 // Core Engineering Competencies & Toolchains', cat: 'Stack Matrix', icon: 'fa-layer-group', action: () => scrollToSection('skills-matrix') },
-    { title: '04 // GitHub Engineering Repository Ledger', cat: 'Codebases', icon: 'fa-code-commit', action: () => scrollToSection('repos-section') },
-    { title: '05 // ESP32 2.4GHz Spectrum Radar Article & Pinout', cat: 'Hackster.io', icon: 'fa-satellite-dish', action: () => openArticleModal(HACKSTER_ARTICLES[0]) },
-    { title: '06 // Career Track Record & Academic Degrees', cat: 'Dossier', icon: 'fa-graduation-cap', action: () => scrollToSection('experience-section') },
-    { title: '07 // UK Graduate Visa (Share Code: WJA R3P 7LZ) & DBS', cat: 'Compliance', icon: 'fa-shield-halved', action: () => scrollToSection('compliance-section') },
-    { title: 'Download ATS-Optimized CV (PDF)', cat: 'Document', icon: 'fa-file-pdf', action: () => window.open('Earl_Chirchir_CV.pdf', '_blank') },
+    { title: 'Kinematics — ABB GoFa Trajectory Simulator', cat: 'Interactive Theatre', icon: 'fa-robot', action: () => scrollToSection('spotlight-section') },
+    { title: 'Hardware — Flagship Embedded & IIoT Systems', cat: 'Products', icon: 'fa-microchip', action: () => scrollToSection('flagship-section') },
+    { title: 'Architecture — Robotics, RTOS, PCB & Cloud Stack', cat: 'Tech Specs', icon: 'fa-layer-group', action: () => scrollToSection('skills-matrix') },
+    { title: 'Open Source — Live GitHub Repository Ecosystem', cat: 'Codebases', icon: 'fa-code-commit', action: () => scrollToSection('repos-section') },
+    { title: 'Research — ESP32 2.4GHz Spectrum Radar Article & Pinout', cat: 'Hackster.io', icon: 'fa-satellite-dish', action: () => openArticleModal(HACKSTER_ARTICLES[0]) },
+    { title: 'Experience — Career Track Record & Academic Degrees', cat: 'Pedigree', icon: 'fa-graduation-cap', action: () => scrollToSection('experience-section') },
+    { title: 'Credentials — UK Graduate Visa (Share Code: WJA R3P 7LZ)', cat: 'Verification', icon: 'fa-shield-halved', action: () => scrollToSection('compliance-section') },
+    { title: 'Download Curriculum Vitae (PDF)', cat: 'Document', icon: 'fa-file-pdf', action: () => window.open('Earl_Chirchir_CV.pdf', '_blank') },
     { title: 'Open Printable Web Resume (cv.html)', cat: 'Document', icon: 'fa-print', action: () => { window.location.href = 'cv.html'; } },
     { title: 'View Kingston University MSc HEAR Transcript (81% Distinction)', cat: 'Credential PDF', icon: 'fa-award', action: () => window.open('Kingston_University_MSc_HEAR_Transcript.pdf', '_blank') },
     { title: 'View GOV.UK Right to Work Verification PDF', cat: 'Clearance PDF', icon: 'fa-passport', action: () => window.open('GOVUK_Right_to_Work_Share_Code_WJA_R3P_7LZ.pdf', '_blank') },
@@ -1293,8 +1296,8 @@ function initTrajectorySimulator() {
     const steps = 120;
     const dt = safeT / steps;
 
-    // 1. Displacement s(t) [Cyan]
-    ctx.strokeStyle = '#38bdf8';
+    // 1. Displacement s(t) [Apple Blue]
+    ctx.strokeStyle = '#2997ff';
     ctx.lineWidth = 2.5;
     ctx.beginPath();
     for (let i = 0; i <= steps; i++) {
@@ -1307,8 +1310,8 @@ function initTrajectorySimulator() {
     }
     ctx.stroke();
 
-    // 2. Velocity v(t) [Emerald]
-    ctx.strokeStyle = '#10b981';
+    // 2. Velocity v(t) [Apple Green]
+    ctx.strokeStyle = '#30d158';
     ctx.lineWidth = 2;
     ctx.beginPath();
     for (let i = 0; i <= steps; i++) {
@@ -1321,8 +1324,8 @@ function initTrajectorySimulator() {
     }
     ctx.stroke();
 
-    // 3. Acceleration a(t) [Amber]
-    ctx.strokeStyle = '#fbbf24';
+    // 3. Acceleration a(t) [Apple Amber]
+    ctx.strokeStyle = '#ff9f0a';
     ctx.lineWidth = 1.75;
     ctx.beginPath();
     const zeroAccY = padTop + plotH * 0.55;
@@ -1343,7 +1346,7 @@ function initTrajectorySimulator() {
     const curY_s = padTop + plotH - (curS / Math.max(0.001, k.D_rad)) * plotH * 0.9;
     ctx.beginPath();
     ctx.arc(curX, curY_s, 4, 0, Math.PI * 2);
-    ctx.fillStyle = '#38bdf8';
+    ctx.fillStyle = '#2997ff';
     ctx.fill();
     ctx.lineWidth = 1.5;
     ctx.strokeStyle = '#ffffff';
@@ -1352,7 +1355,7 @@ function initTrajectorySimulator() {
     const curY_v = padTop + plotH - (curV / Math.max(0.001, k.v_peak * 1.35)) * plotH;
     ctx.beginPath();
     ctx.arc(curX, curY_v, 4, 0, Math.PI * 2);
-    ctx.fillStyle = '#10b981';
+    ctx.fillStyle = '#30d158';
     ctx.fill();
     ctx.lineWidth = 1.5;
     ctx.strokeStyle = '#ffffff';
@@ -1361,7 +1364,7 @@ function initTrajectorySimulator() {
     const curY_a = zeroAccY - (curA / Math.max(0.001, k.aMax * 1.25)) * (plotH * 0.35);
     ctx.beginPath();
     ctx.arc(curX, curY_a, 4, 0, Math.PI * 2);
-    ctx.fillStyle = '#fbbf24';
+    ctx.fillStyle = '#ff9f0a';
     ctx.fill();
     ctx.lineWidth = 1.5;
     ctx.strokeStyle = '#ffffff';
@@ -1429,7 +1432,7 @@ function initTrajectorySimulator() {
     if (readoutVel) readoutVel.textContent = `${v.toFixed(2)} rad/s`;
     if (readoutStatus) {
       readoutStatus.textContent = statusText;
-      readoutStatus.style.color = t >= k.T - 0.001 ? '#10b981' : '#f97316';
+      readoutStatus.style.color = t >= k.T - 0.001 ? '#30d158' : '#2997ff';
     }
     if (liveTimeIndicator) {
       liveTimeIndicator.textContent = `t = ${t.toFixed(2)}s / ${k.T.toFixed(2)}s`;

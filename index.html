@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Earl Chirchir — Robotics, Kinematics &amp; Embedded Systems Engineer</title>
+  <title>Earl Chirchir — Robotics, Kinematics &amp; Embedded Systems</title>
   <meta name="description" content="Engineering portfolio of Earl Chirchir (MSc Mechatronics, Distinction). Specializing in 6-DOF Robot Kinematics, ABB GoFa Trajectory Planning, ESP32 FreeRTOS Firmware, and Industrial IoT." />
   <meta name="keywords" content="Earl Chirchir, Robotics Engineer, Embedded Systems, Mechatronics, ABB GoFa, Kinematics, Trajectory Planning, ESP32, FreeRTOS, LVGL v9, UK Graduate Visa, MATLAB, RoboDK, C++" />
   <meta name="author" content="Earl Chirchir" />
   <link rel="canonical" href="https://earlchirchir.github.io/" />
-  <meta name="theme-color" content="#09090b" />
+  <meta name="theme-color" content="#000000" />
 
   <!-- Open Graph / LinkedIn -->
   <meta property="og:type" content="website" />
@@ -31,994 +31,1080 @@
     "name": "Earl Chirchir",
     "jobTitle": "Robotics & Embedded Systems Engineer",
     "url": "https://earlchirchir.github.io/",
-    "image": "https://avatars.githubusercontent.com/u/106341525?v=4",
     "email": "mailto:earlchirchir@outlook.com",
-    "telephone": "+447425243365",
+    "telephone": "+447760749312",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Epsom, Surrey / Greater London",
+      "addressCountry": "UK"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Kingston University London"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Jomo Kenyatta University of Agriculture and Technology"
+      }
+    ],
     "sameAs": [
       "https://github.com/earlchirchir",
-      "https://www.linkedin.com/in/earl-chirchir/",
+      "https://www.linkedin.com/in/earl-chirchir-087122177/",
       "https://www.hackster.io/earl-chirchir"
-    ],
-    "alumniOf": [
-      { "@type": "CollegeOrUniversity", "name": "Kingston University London" },
-      { "@type": "CollegeOrUniversity", "name": "Jomo Kenyatta University of Agriculture and Technology" }
     ]
   }
   </script>
 
-  <!-- Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts: Inter / Plus Jakarta Sans + JetBrains Mono for precision telemetry -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <link rel="stylesheet" href="./src/style.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/style.css" />
 </head>
 <body>
-  <a href="#main-workspace" class="skip-link">Skip to engineering workspace</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Subtle Technical Blueprint Backdrop -->
-  <div class="viewport-grid-bg" aria-hidden="true"></div>
-  <div class="viewport-vignette" aria-hidden="true"></div>
-
-  <!-- Top System Telemetry Bar -->
-  <div class="sys-topbar">
-    <div class="shell-container sys-topbar-inner">
-      <div class="sys-topbar-left">
-        <span class="sys-node-id"><span class="led-green"></span> SYS.NODE // EC-ROBO-2026</span>
-        <span class="sys-divider">/</span>
-        <span class="sys-loc"><i class="fa-solid fa-location-crosshairs"></i> Swansea, UK (Open to Relocation)</span>
-      </div>
-      <div class="sys-topbar-right">
-        <a href="#compliance-section" class="sys-visa-badge" title="View GOV.UK Right to Work Verification">
-          <i class="fa-solid fa-passport"></i> UK Graduate Visa • Share Code: <strong>WJA R3P 7LZ</strong> (No Sponsorship Needed)
-        </a>
-        <span class="sys-divider hide-sm">/</span>
-        <span class="sys-sync" id="stat-status"><i class="fa-solid fa-satellite-dish"></i> GITHUB API: READY</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Floating Command Dock Navigation -->
-  <header class="dock-header" id="sticky-nav">
-    <div class="shell-container dock-container">
-      <a href="#top" class="dock-brand" aria-label="Earl Chirchir Home">
-        <div class="brand-monogram">EC</div>
-        <div class="brand-meta">
-          <span class="brand-name">Earl Chirchir</span>
-          <span class="brand-role">MSc Mechatronics (Distinction)</span>
-        </div>
+  <!-- =====================================================================
+       APPLE GLOBAL FROSTED GLASS NAVIGATION (44px)
+       ===================================================================== -->
+  <header class="apple-global-nav" id="sticky-nav" role="banner">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand" aria-label="Earl Chirchir Home">
+        <span class="brand-dot"></span>
+        <span class="brand-title">Earl Chirchir</span>
       </a>
 
-      <nav class="dock-nav" id="nav-links" aria-label="Primary Navigation">
-        <a href="#spotlight-section" class="dock-link active"><span class="dock-idx">01</span> Motion Lab</a>
-        <a href="#flagship-section" class="dock-link"><span class="dock-idx">02</span> Systems</a>
-        <a href="#skills-matrix" class="dock-link"><span class="dock-idx">03</span> Stack</a>
-        <a href="#repos-section" class="dock-link"><span class="dock-idx">04</span> Index</a>
-        <a href="#blog-section" class="dock-link"><span class="dock-idx">05</span> RF Radar</a>
-        <a href="#experience-section" class="dock-link"><span class="dock-idx">06</span> Track Record</a>
-        <a href="#compliance-section" class="dock-link"><span class="dock-idx">07</span> Credentials</a>
+      <nav class="nav-links" id="nav-links" aria-label="Primary Navigation">
+        <a href="#spotlight-section" class="nav-link active">Kinematics</a>
+        <a href="#flagship-section" class="nav-link">Hardware</a>
+        <a href="#skills-matrix" class="nav-link">Architecture</a>
+        <a href="#repos-section" class="nav-link">Open Source</a>
+        <a href="#blog-section" class="nav-link">Research</a>
+        <a href="#experience-section" class="nav-link">Experience</a>
+        <a href="#compliance-section" class="nav-link">Credentials</a>
       </nav>
 
-      <div class="dock-actions">
-        <a href="Earl_Chirchir_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-dock-cv" title="Download PDF CV">
-          <i class="fa-solid fa-file-arrow-down"></i> <span>CV.pdf</span>
-        </a>
-        <button type="button" class="btn-dock-cmd" id="cmd-palette-trigger" title="Open Command Palette (Ctrl+K or /)">
-          <i class="fa-solid fa-terminal"></i> <kbd>⌘K</kbd>
+      <div class="nav-actions">
+        <button type="button" id="cmd-palette-trigger" class="nav-icon-btn" title="Quick Search (Ctrl+K / ⌘K)" aria-label="Open Command Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <kbd class="hide-sm">⌘K</kbd>
         </button>
-        <button type="button" class="btn-dock-hire" id="sticky-nav-contact-btn">
-          <span>Initiate Contact</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <a href="Earl_Chirchir_CV.pdf" target="_blank" rel="noopener noreferrer" class="nav-text-link hide-sm">CV</a>
+        <button type="button" id="sticky-nav-contact-btn" class="apple-pill-btn apple-pill-sm">
+          Contact
         </button>
       </div>
     </div>
   </header>
 
-  <main class="shell-container" id="main-workspace">
+  <!-- =====================================================================
+       APPLE SUB-NAV ANNOUNCEMENT RIBBON
+       ===================================================================== -->
+  <div class="apple-ribbon" role="region" aria-label="Work Authorization & Live Status">
+    <div class="shell-container ribbon-inner">
+      <span class="ribbon-text">
+        <span class="status-dot-live"></span>
+        <strong>UK Graduate Visa</strong> — Full right to work with zero sponsorship required · Share Code: <code>WJA R3P 7LZ</code>
+      </span>
+      <div class="ribbon-links">
+        <span id="live-sync-status" class="ribbon-sync">GitHub Live Sync</span>
+        <a href="#compliance-section" class="apple-chevron-link">Verify credentials <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
 
-    <!-- =====================================================================
-         00 // ARCHITECTURAL SPLIT HERO & KINEMATIC TELEMETRY MATRIX
-         ===================================================================== -->
-    <section class="hero-stage" id="top">
-      <div class="hero-blueprint-grid">
-        <!-- Left Column: Primary Narrative & Identity -->
-        <div class="hero-primary-cell">
-          <div class="hero-eyebrow-row">
-            <span class="status-chip-live">
-              <span class="pulse-ring"></span> AVAILABLE IMMEDIATELY • UK FULL WORK RIGHTS
-            </span>
-            <span class="mono-tag">KINGSTON UNIVERSITY • MSc DISTINCTION (81%)</span>
+  <!-- =====================================================================
+       MAIN APPLE KEYNOTE CONTAINER
+       ===================================================================== -->
+  <main id="main-content">
+
+    <!-- ===================================================================
+         HERO: APPLE KEYNOTE MONUMENTAL REVEAL + SILICON BENTO SUMMARY
+         =================================================================== -->
+    <section class="hero-keynote" id="profile-header">
+      <div class="shell-container">
+        <div class="hero-center-stack">
+          <div class="hero-avatar-pill">
+            <img id="avatar" src="https://avatars.githubusercontent.com/u/106341525?v=4" alt="Earl Chirchir" class="hero-avatar-img" width="40" height="40" />
+            <span class="hero-eyebrow-badge">MSc Mechatronics (Distinction · 81%)</span>
+            <span class="hero-eyebrow-sep">·</span>
+            <span id="location" class="hero-eyebrow-loc">London / Surrey, UK</span>
           </div>
 
-          <div class="hero-identity-strip">
-            <div class="hero-avatar-frame">
-              <img id="user-avatar" src="https://avatars.githubusercontent.com/u/106341525?v=4" alt="Earl Chirchir" class="hero-avatar" width="84" height="84" />
-              <span class="avatar-corner-tl"></span>
-              <span class="avatar-corner-br"></span>
-            </div>
-            <div>
-              <div class="hero-name-line">
-                <h1 id="user-name" class="hero-display-name">Earl Chirchir</h1>
-                <a id="user-login" href="https://github.com/earlchirchir" target="_blank" rel="noopener noreferrer" class="hero-github-handle">@earlchirchir</a>
-              </div>
-              <p id="user-bio" class="hero-subtitle">Robotics, Trajectory Planning &amp; Embedded Firmware Engineer</p>
-            </div>
-          </div>
+          <h1 id="name" class="hero-display-title">
+            Precision in motion.<br />
+            <span class="titanium-gradient">Intelligence in silicon.</span>
+          </h1>
 
-          <h2 class="hero-statement">
-            Engineering <span class="text-signal">time-optimal 6-DOF motion laws</span>, deterministic <span class="text-cyan">FreeRTOS firmware</span>, and industrial sensor telemetry.
-          </h2>
-
-          <p class="hero-lead">
-            Bridging analytical control theory and bare-metal hardware execution—from closed-form inverse kinematics and <strong>ABB GoFa CRB 15000</strong> trajectory optimization in MATLAB &amp; RoboDK 3D to dual-core <strong>ESP32 / LVGL v9</strong> instrumentation and multi-layer PCBs.
+          <p id="bio" class="hero-lead-copy">
+            <strong>Earl Chirchir</strong> engineers closed-form <strong>6-DOF industrial robot trajectories</strong>, deterministic <strong>dual-core ESP32 FreeRTOS firmware</strong>, and high-reliability <strong>IIoT cloud telemetry</strong>.
           </p>
 
-          <div class="hero-action-bar">
-            <button id="contact-btn" type="button" class="btn-industrial btn-signal">
-              <i class="fa-solid fa-paper-plane"></i> Contact / Schedule Interview
+          <div class="hero-cta-group">
+            <a href="#spotlight-section" class="apple-pill-btn apple-pill-lg">
+              Explore the Engineering
+            </a>
+            <button type="button" id="contact-btn" class="apple-pill-btn apple-pill-glass apple-pill-lg">
+              Hire / Contact
             </button>
-            <a id="cv-pdf-link" href="Earl_Chirchir_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-steel">
-              <i class="fa-solid fa-file-pdf"></i> Download ATS CV (PDF)
-            </a>
-            <a id="cv-link" href="cv.html" class="btn-industrial btn-ghost-mono">
-              <i class="fa-solid fa-print"></i> Printable Web CV
-            </a>
           </div>
 
-          <div class="hero-quick-links">
-            <a id="github-link" href="https://github.com/earlchirchir" target="_blank" rel="noopener noreferrer" class="quick-channel">
-              <i class="fa-brands fa-github"></i> <span>github.com/earlchirchir</span>
+          <div class="hero-secondary-links">
+            <a href="Earl_Chirchir_CV.pdf" target="_blank" rel="noopener noreferrer" class="apple-chevron-link">
+              Download CV (PDF) <i class="fa-solid fa-chevron-right"></i>
             </a>
-            <a id="linkedin-link" href="https://www.linkedin.com/in/earl-chirchir/" target="_blank" rel="noopener noreferrer" class="quick-channel">
-              <i class="fa-brands fa-linkedin"></i> <span>linkedin.com/in/earl-chirchir</span>
+            <a href="cv.html" class="apple-chevron-link">
+              Interactive Web Resume <i class="fa-solid fa-chevron-right"></i>
             </a>
-            <a id="hackster-link" href="https://www.hackster.io/earl-chirchir" target="_blank" rel="noopener noreferrer" class="quick-channel">
-              <i class="fa-solid fa-microchip"></i> <span>hackster.io/earl-chirchir</span>
+            <a href="https://github.com/earlchirchir" target="_blank" rel="noopener noreferrer" class="apple-chevron-link">
+              GitHub (@earlchirchir) <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-            <a href="mailto:earlchirchir@outlook.com" class="quick-channel">
-              <i class="fa-solid fa-envelope"></i> <span>earlchirchir@outlook.com</span>
-            </a>
-            <a href="tel:+447425243365" class="quick-channel">
-              <i class="fa-solid fa-phone"></i> <span>+44 7425 243365</span>
+            <a href="https://www.linkedin.com/in/earl-chirchir-087122177/" target="_blank" rel="noopener noreferrer" class="apple-chevron-link">
+              LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
         </div>
 
-        <!-- Right Column: Architectural Telemetry Readout Matrix -->
-        <aside class="hero-telemetry-cell" aria-label="Verified Engineering Metrics">
-          <div class="telemetry-panel-head">
-            <span class="tp-label"><i class="fa-solid fa-wave-square"></i> VERIFIED_SYSTEM_METRICS</span>
-            <span class="tp-coords">REF // 2024–2026</span>
+        <!-- APPLE M-SERIES STYLE BENTO SUMMARY GRID -->
+        <div class="apple-hero-bento">
+          <!-- Tile 1: Wide Kinematics Highlight -->
+          <div class="bento-tile bento-span-7 spotlight-surface">
+            <span class="bento-eyebrow">6-DOF Industrial Robotics</span>
+            <div class="bento-stat-row">
+              <span class="bento-giant-metric gradient-blue">~25%</span>
+              <div class="bento-stat-context">
+                <strong>Faster Cycle Execution</strong>
+                <p>Closed-form inverse kinematics and time-optimal Bang-Coast-Bang velocity scheduling on the <strong>ABB GoFa CRB 15000</strong> collaborative robot in MATLAB &amp; RoboDK 3D.</p>
+              </div>
+            </div>
+            <div class="bento-footer-row">
+              <span class="bento-chip">MATLAB</span>
+              <span class="bento-chip">RoboDK 3D</span>
+              <span class="bento-chip">Inverse Dynamics</span>
+              <a href="#spotlight-section" class="apple-chevron-link ml-auto">Launch simulator <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
           </div>
 
-          <div class="telemetry-kpi-grid">
-            <a href="#spotlight-section" class="kpi-cell spotlight-surface">
-              <div class="kpi-top">
-                <span class="kpi-id">SYS.01 // MOTION CONTROL</span>
-                <span class="kpi-badge badge-emerald">TIME-OPTIMAL</span>
-              </div>
-              <div class="kpi-number text-emerald">~25%</div>
-              <div class="kpi-title">Cycle Time Reduction</div>
-              <p class="kpi-desc">Bang-Coast-Bang trapezoidal velocity solver on 6-DOF ABB GoFa CRB 15000 arm.</p>
-            </a>
-
-            <a href="#blog-section" class="kpi-cell spotlight-surface">
-              <div class="kpi-top">
-                <span class="kpi-id">SYS.02 // RTOS FIRMWARE</span>
-                <span class="kpi-badge badge-cyan">DUAL-CORE</span>
-              </div>
-              <div class="kpi-number text-cyan">60 FPS</div>
-              <div class="kpi-title">2.4GHz Spectrum Radar</div>
-              <p class="kpi-desc">Core 0 promiscuous Wi-Fi RSSI scanner + Core 1 LVGL v9 touch GUI on ESP32 CYD.</p>
-            </a>
-
-            <a href="#flagship-section" class="kpi-cell spotlight-surface">
-              <div class="kpi-top">
-                <span class="kpi-id">SYS.03 // INDUSTRIAL IIoT</span>
-                <span class="kpi-badge badge-signal">PRODUCTION</span>
-              </div>
-              <div class="kpi-number text-signal">+40%</div>
-              <div class="kpi-title">Telemetry Accuracy</div>
-              <p class="kpi-desc">HX711 24-bit ADC strain-gauge weighing, Nextion HMI, and SQL/Power BI pipeline.</p>
-            </a>
-
-            <a href="#experience-section" class="kpi-cell spotlight-surface">
-              <div class="kpi-top">
-                <span class="kpi-id">SYS.04 // DISTINCTION</span>
-                <span class="kpi-badge badge-steel">GRADE A</span>
-              </div>
-              <div class="kpi-number">81%</div>
-              <div class="kpi-title">MSc Robotics Dissertation</div>
-              <p class="kpi-desc">Kingston University London MSc Distinction + 1st Place Intervarsity Innovator.</p>
-            </a>
+          <!-- Tile 2: Real-Time Silicon -->
+          <div class="bento-tile bento-span-5 spotlight-surface">
+            <span class="bento-eyebrow">Dual-Core Embedded RTOS</span>
+            <span class="bento-giant-metric gradient-emerald">60 fps</span>
+            <strong class="bento-subtitle">2.4GHz Spectrum Radar &amp; Touch GUI</strong>
+            <p class="bento-desc">Core 0 executes promiscuous 13-channel Wi-Fi scanning while Core 1 drives an LVGL v9 SPI DMA touch interface without frame drops.</p>
+            <div class="bento-footer-row">
+              <span class="bento-chip">ESP32</span>
+              <span class="bento-chip">FreeRTOS</span>
+              <span class="bento-chip">LVGL v9</span>
+            </div>
           </div>
 
-          <div class="telemetry-panel-foot">
-            <div class="tpf-item">
-              <span class="tpf-k">INDEXED REPOS</span>
-              <span class="tpf-v" id="stat-repos">11</span>
+          <!-- Tile 3: Industrial Telemetry -->
+          <div class="bento-tile bento-span-5 spotlight-surface">
+            <span class="bento-eyebrow">Industrial IoT Sensing</span>
+            <span class="bento-giant-metric gradient-amber">+40%</span>
+            <strong class="bento-subtitle">Remote Weighing Telemetry Accuracy</strong>
+            <p class="bento-desc">24-bit Sigma-Delta ADC load-cell calibration, custom 2-layer FR-4 PCB conditioning, Nextion HMI, and real-time MQTT/SQL cloud analytics.</p>
+            <div class="bento-footer-row">
+              <span class="bento-chip">HX711 24-Bit</span>
+              <span class="bento-chip">KiCAD PCB</span>
+              <span class="bento-chip">MQTT / SQL</span>
             </div>
-            <div class="tpf-item">
-              <span class="tpf-k">PRIMARY STACK</span>
-              <span class="tpf-v" id="stat-languages">C++ • MATLAB • KiCAD</span>
-            </div>
-            <div class="tpf-item">
-              <span class="tpf-k">CLEARANCE</span>
-              <span class="tpf-v text-emerald">UK DBS Verified</span>
-            </div>
-            <span id="stat-stars" style="display:none;">0</span>
           </div>
-        </aside>
+
+          <!-- Tile 4: Academic Pedigree & Live GitHub Pulse -->
+          <div class="bento-tile bento-span-7 spotlight-surface">
+            <span class="bento-eyebrow">Academic Excellence &amp; Live Ecosystem</span>
+            <div class="bento-split-metrics">
+              <div class="split-metric-block">
+                <span class="bento-giant-metric gradient-titanium">81%</span>
+                <strong>MSc Mechatronics (Distinction)</strong>
+                <p>Kingston University London · Grade A Dissertation · Plus BSc Agricultural &amp; Biosystems Engineering (2:1).</p>
+              </div>
+              <div class="split-metric-divider"></div>
+              <div class="split-metric-block">
+                <div class="live-repo-counter">
+                  <span id="repo-count" class="bento-giant-metric gradient-purple">11</span>
+                  <span class="live-badge-pill"><span class="status-dot-live"></span> LIVE API</span>
+                </div>
+                <strong>Public Engineering Repositories</strong>
+                <p>Continuously synced from GitHub (<code>@earlchirchir</code>) · <span id="total-stars">0</span> stars across robotics, C++ firmware, and PCBs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- =====================================================================
-         01 // INTERACTIVE KINEMATICS & MOTION CONTROL WORKBENCH
-         ===================================================================== -->
-    <section class="workspace-section" id="spotlight-section">
-      <div class="section-bar">
-        <div class="section-bar-left">
-          <span class="sec-index">01 // KINEMATICS &amp; DYNAMICS LAB</span>
-          <h2 class="sec-heading">ABB GoFa CRB 15000: Time-Optimal Trajectory Workbench</h2>
-        </div>
-        <div class="section-bar-right">
-          <span class="sec-tag"><i class="fa-solid fa-graduation-cap"></i> MSc Dissertation • 81% Distinction</span>
-          <a href="https://github.com/earlchirchir/ABB-CRB-15000-Robotic-Arm-Kinematics-Trajectory-Planning" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-            <i class="fa-brands fa-github"></i> Source Solver <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="workbench-shell spotlight-surface" id="trajectory-simulator">
-        <!-- Top Engineering Summary Strip -->
-        <div class="workbench-brief">
-          <div class="wb-brief-text">
-            <p>
-              <strong>Mathematical Problem &amp; Solution:</strong> Collaborative industrial manipulators often suffer from cycle bottlenecks and actuator torque ripple caused by unblended velocity steps. By formulating closed-form 6-DOF inverse kinematics and a <strong>Bang-Coast-Bang trapezoidal time law</strong> in MATLAB &amp; RoboDK 3D, joint transit duration was reduced by <strong>~25%</strong> while enforcing zero acceleration discontinuity across multi-axis boundaries.
-            </p>
-          </div>
-          <div class="wb-presets-group" role="group" aria-label="Trajectory Presets">
-            <span class="wb-preset-lbl">LOAD PRESET:</span>
-            <button type="button" class="preset-btn active" data-preset="fast-transfer">Fast Pick &amp; Place (90°)</button>
-            <button type="button" class="preset-btn" data-preset="precision">Precision Blending (45°)</button>
-            <button type="button" class="preset-btn" data-preset="heavy-payload">Full Envelope Sweep (180°)</button>
-          </div>
+    <!-- ===================================================================
+         SECTION 01: INTERACTIVE KINEMATICS THEATRE (ABB GoFa CRB 15000)
+         =================================================================== -->
+    <section id="spotlight-section" class="apple-section section-charcoal">
+      <div class="shell-container">
+        <div class="apple-section-intro">
+          <span class="section-eyebrow">MSc Distinction Research · ABB GoFa CRB 15000</span>
+          <h2 class="section-headline">
+            Kinematics.<br />
+            <span class="text-subtle">Engineered to the millisecond.</span>
+          </h2>
+          <p class="section-lead">
+            Unblended step velocity inputs trigger severe torque spikes and joint vibration in 6-DOF collaborative robots. Experience how my closed-form <strong>Bang-Coast-Bang</strong> solver saturates acceleration ($+A_{\max}$), coasts at $V_{\max}$, and decelerates smoothly ($-A_{\max}$) to cut cycle times by <strong>~25%</strong>.
+          </p>
         </div>
 
-        <!-- Interactive Split Workbench -->
-        <div class="workbench-grid">
-          <!-- Left Parameter Deck -->
-          <div class="workbench-controls">
-            <div class="wc-header">
-              <span><i class="fa-solid fa-sliders"></i> JOINT_CONSTRAINTS_INPUT</span>
-              <span class="wc-unit">SI / RAD</span>
+        <!-- APPLE DARK TITANIUM INTERACTIVE THEATRE -->
+        <div class="apple-theatre-card spotlight-surface" id="trajectory-simulator">
+          <div class="theatre-topbar">
+            <div class="theatre-title-group">
+              <span class="theatre-dot dot-red"></span>
+              <span class="theatre-dot dot-yellow"></span>
+              <span class="theatre-dot dot-green"></span>
+              <span class="theatre-window-label">ABB GoFa CRB 15000 — Real-Time Trajectory Solver</span>
             </div>
 
-            <div class="control-group">
-              <div class="control-label-row">
-                <label for="traj-displacement">Target Angular Displacement (<span class="math-var">Δθ</span>)</label>
-                <span class="control-value" id="val-displacement">90°</span>
-              </div>
-              <input type="range" id="traj-displacement" min="20" max="180" step="5" value="90" class="traj-slider" />
-              <div class="slider-ticks"><span>20°</span><span>90°</span><span>180°</span></div>
-            </div>
-
-            <div class="control-group">
-              <div class="control-label-row">
-                <label for="traj-velocity">Max Joint Velocity (<span class="math-var">V<sub>max</sub></span>)</label>
-                <span class="control-value" id="val-velocity">1.8 rad/s</span>
-              </div>
-              <input type="range" id="traj-velocity" min="0.5" max="3.0" step="0.1" value="1.8" class="traj-slider" />
-              <div class="slider-ticks"><span>0.5 rad/s</span><span>1.8 rad/s</span><span>3.0 rad/s</span></div>
-            </div>
-
-            <div class="control-group">
-              <div class="control-label-row">
-                <label for="traj-accel">Max Joint Acceleration (<span class="math-var">A<sub>max</sub></span>)</label>
-                <span class="control-value" id="val-accel">4.0 rad/s²</span>
-              </div>
-              <input type="range" id="traj-accel" min="1.0" max="8.0" step="0.5" value="4.0" class="traj-slider" />
-              <div class="slider-ticks"><span>1.0 rad/s²</span><span>4.0 rad/s²</span><span>8.0 rad/s²</span></div>
-            </div>
-
-            <div class="control-group">
-              <span class="toggle-label">Motion Law Formulation:</span>
-              <div class="profile-toggle-buttons">
-                <button type="button" class="profile-btn active" id="btn-profile-optimal" data-profile="optimal">
-                  <i class="fa-solid fa-check-double"></i> Bang-Coast-Bang
-                </button>
-                <button type="button" class="profile-btn" id="btn-profile-unopt" data-profile="unoptimized">
-                  <i class="fa-solid fa-wave-square"></i> Unblended (High Jerk)
-                </button>
-              </div>
-            </div>
-
-            <div class="sim-action-row">
-              <button type="button" id="btn-play-sim" class="btn-industrial btn-signal btn-sim-play">
-                <i class="fa-solid fa-play"></i> Execute Trajectory
+            <!-- Apple Segmented Control for Profile Mode -->
+            <div class="apple-segmented-control" role="group" aria-label="Trajectory Profile Mode">
+              <button type="button" class="seg-btn active" id="btn-profile-optimal" data-mode="optimal">
+                Bang-Coast-Bang Optimal
               </button>
-              <button type="button" id="btn-reset-sim" class="btn-industrial btn-steel btn-sim-reset" title="Reset timeline to t = 0s" aria-label="Reset simulation">
-                <i class="fa-solid fa-rotate-left"></i>
+              <button type="button" class="seg-btn" id="btn-profile-unopt" data-mode="unoptimized">
+                Unblended Step Baseline
               </button>
             </div>
+          </div>
 
-            <div class="kinematic-telemetry-grid">
-              <div class="telemetry-item">
-                <span class="telemetry-lbl">Total Cycle (<span class="math-var">T</span>)</span>
-                <span class="telemetry-val text-emerald" id="tele-total-time">1.32 s</span>
+          <div class="theatre-body-grid">
+            <!-- Left Column: Tactile Apple Controls + 2D Manipulator Preview -->
+            <div class="theatre-controls-pane">
+              <div class="preset-row">
+                <span class="control-group-label">Industrial Presets</span>
+                <div class="preset-pills">
+                  <button type="button" class="preset-btn active" data-preset="fast-transfer">Pick &amp; Place (90°)</button>
+                  <button type="button" class="preset-btn" data-preset="precision">Micro-Weld (45°)</button>
+                  <button type="button" class="preset-btn" data-preset="heavy-payload">Max Slew (180°)</button>
+                </div>
               </div>
-              <div class="telemetry-item">
-                <span class="telemetry-lbl">Ramp Phase (<span class="math-var">t<sub>a</sub></span>)</span>
-                <span class="telemetry-val" id="tele-accel-time">0.45 s</span>
+
+              <div class="sliders-stack">
+                <div class="apple-slider-card">
+                  <div class="slider-header">
+                    <label for="traj-displacement">Joint Angular Travel (<span class="math-var">Δθ</span>)</label>
+                    <span class="slider-readout" id="val-displacement">90° (1.57 rad)</span>
+                  </div>
+                  <input type="range" id="traj-displacement" min="15" max="180" step="5" value="90" />
+                </div>
+
+                <div class="apple-slider-card">
+                  <div class="slider-header">
+                    <label for="traj-velocity">Peak Joint Velocity (<span class="math-var">V<sub>max</sub></span>)</label>
+                    <span class="slider-readout" id="val-velocity">1.80 rad/s</span>
+                  </div>
+                  <input type="range" id="traj-velocity" min="0.5" max="3.2" step="0.1" value="1.8" />
+                </div>
+
+                <div class="apple-slider-card">
+                  <div class="slider-header">
+                    <label for="traj-accel">Peak Angular Accel (<span class="math-var">A<sub>max</sub></span>)</label>
+                    <span class="slider-readout" id="val-accel">4.0 rad/s²</span>
+                  </div>
+                  <input type="range" id="traj-accel" min="1.0" max="8.0" step="0.5" value="4.0" />
+                </div>
               </div>
-              <div class="telemetry-item">
-                <span class="telemetry-lbl">Coast Phase (<span class="math-var">t<sub>c</sub></span>)</span>
-                <span class="telemetry-val" id="tele-coast-time">0.42 s</span>
+
+              <!-- 2D Kinematic Manipulator Stage -->
+              <div class="arm-preview-card">
+                <div class="arm-preview-header">
+                  <span class="arm-preview-title">6-DOF Planar Kinematic Projection</span>
+                  <span id="readout-status" class="arm-status-pill">Ready (Standby)</span>
+                </div>
+
+                <div class="arm-svg-stage">
+                  <svg id="robot-arm-svg" viewBox="0 0 220 130" aria-label="2D Robot Arm Kinematic Preview">
+                    <defs>
+                      <linearGradient id="linkGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#2997ff" />
+                        <stop offset="100%" stop-color="#0071e3" />
+                      </linearGradient>
+                      <linearGradient id="linkGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#f5f5f7" />
+                        <stop offset="100%" stop-color="#86868b" />
+                      </linearGradient>
+                    </defs>
+                    <line x1="10" y1="112" x2="210" y2="112" stroke="rgba(255,255,255,0.12)" stroke-width="2" />
+                    <path d="M 41 35 A 60 60 0 0 1 155 95" fill="none" stroke="rgba(41,151,255,0.22)" stroke-width="1.5" stroke-dasharray="3 3" />
+                    <rect x="26" y="96" width="30" height="16" rx="4" fill="#2c2c2e" stroke="rgba(255,255,255,0.2)" />
+                    <line id="arm-link-1" x1="41" y1="95" x2="80" y2="55" stroke="url(#linkGrad1)" stroke-width="7" stroke-linecap="round" />
+                    <circle cx="41" cy="95" r="6" fill="#f5f5f7" />
+                    <line id="arm-link-2" x1="80" y1="55" x2="132" y2="50" stroke="url(#linkGrad2)" stroke-width="5" stroke-linecap="round" />
+                    <circle id="arm-joint-2" cx="80" cy="55" r="5" fill="#2997ff" stroke="#000" stroke-width="1.5" />
+                    <line id="arm-end-effector" x1="132" y1="50" x2="152" y2="55" stroke="#30d158" stroke-width="3" stroke-linecap="round" />
+                    <circle id="arm-joint-3" cx="132" cy="50" r="4" fill="#f5f5f7" />
+                    <circle id="arm-tool-tip" cx="152" cy="55" r="4.5" fill="#30d158" />
+                  </svg>
+
+                  <div class="arm-live-metrics">
+                    <div class="arm-metric-line">
+                      <span>Angle <span class="math-var">θ(t)</span></span>
+                      <strong id="readout-pos">0.0° / 90.0°</strong>
+                    </div>
+                    <div class="arm-metric-line">
+                      <span>Velocity <span class="math-var">ω(t)</span></span>
+                      <strong id="readout-vel">0.00 rad/s</strong>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="telemetry-item">
-                <span class="telemetry-lbl">Cycle Gain</span>
-                <span class="telemetry-val text-cyan" id="tele-efficiency">+24.8%</span>
+
+              <div class="theatre-action-buttons">
+                <button type="button" class="apple-pill-btn apple-pill-lg flex-1" id="btn-play-sim">
+                  <i class="fa-solid fa-play"></i> Execute Trajectory
+                </button>
+                <button type="button" class="apple-pill-btn apple-pill-glass" id="btn-reset-sim" title="Reset Simulation">
+                  <i class="fa-solid fa-rotate-left"></i> Reset
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Column: Retina Oscilloscope Canvas & Telemetry Strip -->
+            <div class="theatre-display-pane">
+              <div class="telemetry-strip-4">
+                <div class="tele-card">
+                  <span class="tele-label">Cycle Duration (<span class="math-var">T</span>)</span>
+                  <strong class="tele-value" id="tele-total-time">1.32 s</strong>
+                </div>
+                <div class="tele-card">
+                  <span class="tele-label">Ramp Window (<span class="math-var">t<sub>a</sub></span>)</span>
+                  <strong class="tele-value" id="tele-accel-time">0.45 s</strong>
+                </div>
+                <div class="tele-card">
+                  <span class="tele-label">Coast Window (<span class="math-var">t<sub>c</sub></span>)</span>
+                  <strong class="tele-value" id="tele-coast-time">0.42 s</strong>
+                </div>
+                <div class="tele-card tele-card-highlight">
+                  <span class="tele-label">Cycle Time Saved</span>
+                  <strong class="tele-value text-apple-green" id="tele-efficiency">+24.8%</strong>
+                </div>
+              </div>
+
+              <div class="oscilloscope-frame">
+                <div class="osc-header">
+                  <div class="osc-legend">
+                    <span class="legend-item"><i class="dot-blue"></i> Position <span class="math-var">s(t)</span></span>
+                    <span class="legend-item"><i class="dot-green"></i> Velocity <span class="math-var">ṡ(t)</span></span>
+                    <span class="legend-item"><i class="dot-amber"></i> Acceleration <span class="math-var">s̈(t)</span></span>
+                  </div>
+                  <span class="osc-time-badge" id="live-time-indicator">t = 0.00s / 1.32s</span>
+                </div>
+
+                <div class="canvas-stage" title="Click or drag anywhere on the waveform to scrub through time">
+                  <canvas id="trajectory-canvas" width="700" height="270"></canvas>
+                  <div id="sim-scrubber-line" class="scrubber-line"></div>
+                </div>
+
+                <div class="osc-footer">
+                  <span><i class="fa-regular fa-hand-pointer"></i> Drag horizontally across the waveform to inspect instantaneous kinematics</span>
+                  <div class="osc-links">
+                    <a href="https://github.com/earlchirchir/ABB-CRB-15000-Robotic-Arm-Kinematics-Trajectory-Planning" target="_blank" rel="noopener noreferrer" class="apple-chevron-link">
+                      MATLAB &amp; RoboDK Source <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="Kingston_University_MSc_HEAR_Transcript.pdf" target="_blank" rel="noopener noreferrer" class="apple-chevron-link">
+                      MSc Transcript (81%) <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3 Mathematical Highlights -->
+              <div class="math-highlights-row">
+                <div class="math-card">
+                  <span class="math-step">01 · Forward &amp; Inverse Kinematics</span>
+                  <p>Closed-form Denavit-Hartenberg transformations <span class="math-inline"><sup>0</sup>T<sub>6</sub>(q)</span> and analytical Jacobian <span class="math-inline">J(q)</span> avoiding singularities.</p>
+                </div>
+                <div class="math-card">
+                  <span class="math-step">02 · Time-Optimal Scaling</span>
+                  <p>Piecewise <span class="math-inline">s(t)</span> profile saturating <span class="math-inline">±A<sub>max</sub></span> and <span class="math-inline">V<sub>max</sub></span> for minimum-time point-to-point motion.</p>
+                </div>
+                <div class="math-card">
+                  <span class="math-step">03 · Digital Twin Verification</span>
+                  <p>Validated in <strong>RoboDK 3D</strong> on the ABB GoFa CRB 15000 for collision-free industrial pick-and-place cells.</p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Right Oscilloscope & Kinematic Manipulator Telemetry -->
-          <div class="workbench-monitor">
-            <div class="monitor-top-bar">
-              <div class="canvas-header-legend">
-                <span class="legend-item"><span class="legend-dot dot-pos"></span> Pos <span class="math-inline"><i>s</i>(<i>t</i>)</span></span>
-                <span class="legend-item"><span class="legend-dot dot-vel"></span> Vel <span class="math-inline"><i>v</i>(<i>t</i>)</span></span>
-                <span class="legend-item"><span class="legend-dot dot-acc"></span> Accel <span class="math-inline"><i>a</i>(<i>t</i>)</span></span>
+    <!-- ===================================================================
+         SECTION 02: FLAGSHIP HARDWARE & EMBEDDED SYSTEMS
+         =================================================================== -->
+    <section id="flagship-section" class="apple-section section-black">
+      <div class="shell-container">
+        <div class="apple-section-intro">
+          <span class="section-eyebrow">Embedded Firmware · Industrial IoT · Mechanical CAD</span>
+          <h2 class="section-headline">
+            Hardware &amp; Silicon.<br />
+            <span class="text-subtle">Built from the bare metal up.</span>
+          </h2>
+          <p class="section-lead">
+            Every system is architected across the full physical stack—from custom 2-layer FR-4 PCBs and deterministic FreeRTOS scheduling to cloud telemetry dashboards.
+          </p>
+        </div>
+
+        <div class="apple-product-grid">
+          <!-- Product 1: ESP32 Spectrum Radar -->
+          <article class="apple-product-card spotlight-surface">
+            <div class="product-card-top">
+              <div class="product-eyebrow-row">
+                <span class="product-tag">ESP32 Dual-Core · FreeRTOS</span>
+                <span class="product-metric-pill pill-emerald">60 fps LVGL v9</span>
               </div>
-              <div class="monitor-scrub-hint">
-                <span><i class="fa-solid fa-arrows-left-right"></i> DRAG PLOT TO SCRUB</span>
-                <span class="canvas-time-indicator" id="live-time-indicator">t = 0.00s</span>
+              <h3 class="product-title">2.4GHz Wi-Fi Spectrum Radar &amp; Touch Inspector</h3>
+              <p class="product-copy">
+                Handheld RF congestion analyzer on the ESP32-2432S022C (CYD). Isolates promiscuous 13-channel Wi-Fi RSSI scanning on <strong>Core 0</strong> while <strong>Core 1</strong> drives a 60 fps LVGL v9 touch interface over SPI DMA.
+              </p>
+
+              <!-- Sleek Apple Silicon Pipeline Diagram -->
+              <div class="silicon-flow">
+                <div class="silicon-node">
+                  <span class="node-chip">CORE 0 · PRO_CPU</span>
+                  <strong>13-Ch RF Scanner</strong>
+                </div>
+                <i class="fa-solid fa-arrow-right silicon-arrow"></i>
+                <div class="silicon-node">
+                  <span class="node-chip">IPC QUEUE</span>
+                  <strong>Lock-Free RingBuf</strong>
+                </div>
+                <i class="fa-solid fa-arrow-right silicon-arrow"></i>
+                <div class="silicon-node">
+                  <span class="node-chip">CORE 1 · APP_CPU</span>
+                  <strong>60fps LVGL DMA</strong>
+                </div>
               </div>
             </div>
 
-            <div class="canvas-wrapper" title="Click or drag horizontally to scrub trajectory timeline">
-              <canvas id="trajectory-canvas" width="640" height="250"></canvas>
-              <div id="sim-scrubber-line" class="sim-scrubber"></div>
-            </div>
-
-            <div class="cobot-motion-preview">
-              <div class="cobot-schematic-wrap">
-                <svg id="cobot-svg-arm" viewBox="0 0 220 115" class="cobot-svg" aria-label="ABB GoFa 2D Kinematic Arm Preview">
-                  <path d="M 41 95 A 75 75 0 0 1 168 72" fill="none" stroke="rgba(56, 189, 248, 0.18)" stroke-width="1" stroke-dasharray="3,3" />
-                  <rect x="25" y="96" width="32" height="12" rx="2" fill="#18181b" stroke="#f97316" stroke-width="1.5" />
-                  <circle cx="41" cy="95" r="7" fill="#09090b" stroke="#f97316" stroke-width="2" />
-                  <line id="arm-link-1" x1="41" y1="95" x2="85" y2="52" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" />
-                  <circle id="arm-joint-2" cx="85" cy="52" r="5" fill="#38bdf8" />
-                  <line id="arm-link-2" x1="85" y1="52" x2="140" y2="38" stroke="#60a5fa" stroke-width="4" stroke-linecap="round" />
-                  <circle id="arm-joint-3" cx="140" cy="38" r="4" fill="#60a5fa" />
-                  <line id="arm-end-effector" x1="140" y1="38" x2="162" y2="32" stroke="#10b981" stroke-width="3" stroke-linecap="round" />
-                  <circle id="arm-tool-tip" cx="162" cy="32" r="3.5" fill="#10b981" />
-                  <circle id="arm-target-ghost" cx="168" cy="72" r="5" fill="none" stroke="rgba(16, 185, 129, 0.65)" stroke-width="1.8" stroke-dasharray="3,3" />
-                </svg>
+            <div class="product-card-bottom">
+              <div class="product-spec-list">
+                <span><strong>Target MCU:</strong> ESP32 Xtensa LX6 (240 MHz)</span>
+                <span><strong>Display:</strong> 2.8" 240×320 ILI9341 TFT + XPT2046 Touch</span>
               </div>
-              <div class="cobot-status-readout">
-                <div class="readout-row">
-                  <span class="r-label">Instant Joint Position (<span class="math-var">θ</span>):</span>
-                  <span class="r-val" id="readout-pos">0.0° / 90.0°</span>
-                </div>
-                <div class="readout-row">
-                  <span class="r-label">Instant Angular Velocity (<span class="math-var">ω</span>):</span>
-                  <span class="r-val" id="readout-vel">0.00 rad/s</span>
-                </div>
-                <div class="readout-row">
-                  <span class="r-label">Controller State:</span>
-                  <span class="r-val status-active" id="readout-status">Ready (Standby)</span>
-                </div>
-              </div>
-              <div class="cobot-doc-actions">
-                <a href="Kingston_University_MSc_HEAR_Transcript.pdf" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                  <i class="fa-solid fa-file-pdf"></i> HEAR Transcript (81%)
+              <div class="product-links-row">
+                <a href="https://github.com/earlchirchir/ESP32-Spectrum-Radar" target="_blank" rel="noopener noreferrer" class="apple-chevron-link">
+                  Explore Firmware <i class="fa-solid fa-chevron-right"></i>
                 </a>
-                <a href="https://github.com/earlchirchir/ABB-CRB-15000-Robotic-Arm-Kinematics-Trajectory-Planning#readme" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                  <i class="fa-solid fa-chart-line"></i> RoboDK Plots
+                <a href="#blog-section" class="apple-chevron-link">
+                  Read Teardown <i class="fa-solid fa-chevron-right"></i>
                 </a>
               </div>
             </div>
-          </div>
+          </article>
+
+          <!-- Product 2: Industrial IIoT Bulk Weighing -->
+          <article class="apple-product-card spotlight-surface">
+            <div class="product-card-top">
+              <div class="product-eyebrow-row">
+                <span class="product-tag">Industrial IoT · Custom PCB</span>
+                <span class="product-metric-pill pill-blue">+40% Accuracy</span>
+              </div>
+              <h3 class="product-title">Industrial IoT Bulk Weighing &amp; Cloud Telemetry</h3>
+              <p class="product-copy">
+                Production field telemetry platform for agricultural machinery and bulk weighing bins. Combines 24-bit Sigma-Delta ADC load-cell arrays, a Nextion operator HMI, and real-time MQTT/SQL cloud pipelines.
+              </p>
+
+              <div class="silicon-flow">
+                <div class="silicon-node">
+                  <span class="node-chip">ANALOG FRONTEND</span>
+                  <strong>6-Ch Load PCB</strong>
+                </div>
+                <i class="fa-solid fa-arrow-right silicon-arrow"></i>
+                <div class="silicon-node">
+                  <span class="node-chip">EDGE CONTROLLER</span>
+                  <strong>ESP32 + Nextion</strong>
+                </div>
+                <i class="fa-solid fa-arrow-right silicon-arrow"></i>
+                <div class="silicon-node">
+                  <span class="node-chip">CLOUD ANALYTICS</span>
+                  <strong>MQTT → SQL / BI</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-bottom">
+              <div class="product-spec-list">
+                <span><strong>ADC Conditioning:</strong> 24-Bit HX711 + 2-Layer FR-4 PCB</span>
+                <span><strong>Field Impact:</strong> +40% remote reporting accuracy</span>
+              </div>
+              <div class="product-links-row">
+                <a href="https://github.com/earlchirchir/IoT-Weighing-Solution-for-Bulk-Bins" target="_blank" rel="noopener noreferrer" class="apple-chevron-link">
+                  System Repo <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="https://github.com/earlchirchir/Load-Sensor-Modules-PCB" target="_blank" rel="noopener noreferrer" class="apple-chevron-link">
+                  KiCAD PCB Files <i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3: Mechatronic Cane Crusher & Assistive Hardware -->
+          <article class="apple-product-card spotlight-surface">
+            <div class="product-card-top">
+              <div class="product-eyebrow-row">
+                <span class="product-tag">Mechatronic Design · FEA</span>
+                <span class="product-metric-pill pill-amber">85% Extraction</span>
+              </div>
+              <h3 class="product-title">Automated 3-Roller Crusher &amp; Haptic Hardware</h3>
+              <p class="product-copy">
+                Engineered a 3-roller mechatronic cane crusher achieving <strong>85% extraction efficiency</strong> under <strong>2.5 kN roller loads</strong> (SolidWorks FEA), alongside the <strong>Odi2 Deafblind</strong> I2C haptic interface and <strong>1st-Place</strong> smart coop.
+              </p>
+
+              <div class="silicon-flow">
+                <div class="silicon-node">
+                  <span class="node-chip">SENSING ARRAY</span>
+                  <strong>I2C / Load Matrix</strong>
+                </div>
+                <i class="fa-solid fa-arrow-right silicon-arrow"></i>
+                <div class="silicon-node">
+                  <span class="node-chip">CONTROL CORE</span>
+                  <strong>Deterministic FSM</strong>
+                </div>
+                <i class="fa-solid fa-arrow-right silicon-arrow"></i>
+                <div class="silicon-node">
+                  <span class="node-chip">ACTUATION</span>
+                  <strong>2.5kN Drive / LRA</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-bottom">
+              <div class="product-spec-list">
+                <span><strong>CAD &amp; Validation:</strong> SolidWorks 3D &amp; Structural FEA</span>
+                <span><strong>Recognition:</strong> 1st Place Agricultural IoT Award</span>
+              </div>
+              <div class="product-links-row">
+                <a href="https://github.com/earlchirchir/Odi2-Deafblind-Assistive-Device" target="_blank" rel="noopener noreferrer" class="apple-chevron-link">
+                  Odi2 Haptics <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="https://github.com/earlchirchir/Eggcellent-Automated-Chicken-Coop" target="_blank" rel="noopener noreferrer" class="apple-chevron-link">
+                  Smart Coop <i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================================
-         02 // FLAGSHIP ENGINEERING CASE STUDIES (DEEP ARCHITECTURAL DIAGRAMS)
-         ===================================================================== -->
-    <section class="workspace-section" id="flagship-section">
-      <div class="section-bar">
-        <div class="section-bar-left">
-          <span class="sec-index">02 // PRODUCTION HARDWARE &amp; EMBEDDED ARCHITECTURES</span>
-          <h2 class="sec-heading">Flagship Systems &amp; Hardware Implementations</h2>
-        </div>
-        <div class="section-bar-right">
-          <span class="sec-tag">End-to-End Hardware • Firmware • Telemetry</span>
-        </div>
-      </div>
-
-      <div class="flagship-grid">
-        <!-- Case Study 1: ESP32 Spectrum Radar -->
-        <article class="flagship-card spotlight-surface">
-          <div class="fc-topbar">
-            <span class="fc-id">ARCH.01 // DUAL-CORE RTOS INSTRUMENTATION</span>
-            <span class="lang-pill lang-cpp">C++ / FreeRTOS / LVGL 9</span>
-          </div>
-          <h3 class="fc-title">ESP32 2.4GHz Wi-Fi Spectrum Radar &amp; Touch Network Inspector</h3>
-          <p class="fc-desc">
-            Engineered a handheld RF congestion analyzer on the <strong>ESP32-2432S022C (CYD)</strong> for under £15. Isolated continuous 13-channel Wi-Fi promiscuous scanning on <strong>Core 0</strong> while driving a 60 FPS <strong>LVGL v9</strong> capacitive touch UI over SPI DMA on <strong>Core 1</strong> without frame buffer starvation.
+    <!-- ===================================================================
+         SECTION 03: TECHNICAL ARCHITECTURE MATRIX (APPLE TECH SPECS STYLE)
+         =================================================================== -->
+    <section id="skills-matrix" class="apple-section section-charcoal">
+      <div class="shell-container">
+        <div class="apple-section-intro">
+          <span class="section-eyebrow">System Architecture</span>
+          <h2 class="section-headline">
+            Every discipline.<br />
+            <span class="text-subtle">Integrated seamlessly.</span>
+          </h2>
+          <p class="section-lead">
+            Bridging mathematical control theory, low-level embedded C/C++, custom PCB layout, and cloud data engineering.
           </p>
-          <div class="fc-pipeline">
-            <div class="pipe-node">
-              <span class="pipe-k">CORE 0 (RF TASK)</span>
-              <span class="pipe-v">2.4GHz Promiscuous RSSI Sweep</span>
-            </div>
-            <i class="fa-solid fa-arrow-right pipe-arrow"></i>
-            <div class="pipe-node">
-              <span class="pipe-k">IPC QUEUE</span>
-              <span class="pipe-v">Lock-Free Channel Density Struct</span>
-            </div>
-            <i class="fa-solid fa-arrow-right pipe-arrow"></i>
-            <div class="pipe-node">
-              <span class="pipe-k">CORE 1 (HMI)</span>
-              <span class="pipe-v">60 FPS LVGL v9 SPI DMA Display</span>
-            </div>
-          </div>
-          <div class="fc-footer">
-            <div class="fc-metrics">
-              <span><strong>Channels:</strong> 1–13 (2.4GHz)</span>
-              <span><strong>Refresh:</strong> 60 FPS</span>
-              <span><strong>BOM:</strong> &lt; £15</span>
-            </div>
-            <div class="fc-links">
-              <a href="https://github.com/earlchirchir/ESP32-Spectrum-Radar" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                <i class="fa-brands fa-github"></i> Firmware Repo
-              </a>
-            </div>
-          </div>
-        </article>
+        </div>
 
-        <!-- Case Study 2: Industrial IoT Weighing & Custom 6-Ch PCB -->
-        <article class="flagship-card spotlight-surface">
-          <div class="fc-topbar">
-            <span class="fc-id">ARCH.02 // INDUSTRIAL IIoT &amp; CUSTOM PCB</span>
-            <span class="lang-pill lang-hardware">ESP32 / KiCAD / MQTT</span>
+        <div class="apple-specs-grid">
+          <div class="spec-pillar spotlight-surface">
+            <div class="spec-pillar-icon icon-blue"><i class="fa-solid fa-robot"></i></div>
+            <h3>Robotics &amp; Kinematics</h3>
+            <p>Closed-form 6-DOF forward/inverse kinematics, analytical Jacobians, and collision-free trajectory generation.</p>
+            <div class="spec-tags">
+              <span>ABB GoFa CRB 15000</span>
+              <span>6-DOF Kinematics</span>
+              <span>Bang-Coast-Bang</span>
+              <span>RoboDK 3D</span>
+              <span>MATLAB &amp; Simulink</span>
+              <span>PID Control Loops</span>
+            </div>
           </div>
-          <h3 class="fc-title">Industrial Bulk Bin Weighing Telemetry &amp; 6-Channel Load-Cell PCB</h3>
-          <p class="fc-desc">
-            Designed a custom 2-layer FR-4 signal-conditioning PCB (KiCAD/Eagle) and industrial telemetry unit for manufacturing bulk bins. Integrated 24-bit <strong>HX711 Sigma-Delta ADCs</strong>, operator <strong>Nextion HMIs</strong>, and JSON/MQTT cloud pipelines—increasing remote batch logging accuracy by <strong>~40%</strong>.
+
+          <div class="spec-pillar spotlight-surface">
+            <div class="spec-pillar-icon icon-emerald"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Embedded Silicon &amp; RTOS</h3>
+            <p>Deterministic dual-core firmware, DMA display drivers, and low-latency industrial sensor fusion in C/C++.</p>
+            <div class="spec-tags">
+              <span>Embedded C / C++</span>
+              <span>ESP32 Dual-Core</span>
+              <span>FreeRTOS Scheduling</span>
+              <span>LVGL v9 Touch GUI</span>
+              <span>I2C / SPI / UART</span>
+              <span>HX711 24-Bit ADC</span>
+            </div>
+          </div>
+
+          <div class="spec-pillar spotlight-surface">
+            <div class="spec-pillar-icon icon-amber"><i class="fa-solid fa-Compass-drafting fa-compass-drafting"></i></div>
+            <h3>PCB Layout &amp; CAD / FEA</h3>
+            <p>2-layer FR-4 mixed-signal board design, analog conditioning, and finite element stress simulation.</p>
+            <div class="spec-tags">
+              <span>KiCAD Schematic/PCB</span>
+              <span>Autodesk Eagle</span>
+              <span>SolidWorks 3D CAD</span>
+              <span>Structural FEA</span>
+              <span>AutoCAD &amp; Inventor</span>
+              <span>Signal Conditioning</span>
+            </div>
+          </div>
+
+          <div class="spec-pillar spotlight-surface">
+            <div class="spec-pillar-icon icon-purple"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+            <h3>Cloud Telemetry &amp; ML</h3>
+            <p>Asynchronous device-to-cloud telemetry, SQL ingestion pipelines, and Python machine learning models.</p>
+            <div class="spec-tags">
+              <span>MQTT / HTTP REST</span>
+              <span>Python (Scikit-Learn)</span>
+              <span>SQL &amp; Power BI</span>
+              <span>WebSockets UI</span>
+              <span>Git &amp; PlatformIO</span>
+              <span>Linux CLI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 04: LIVE GITHUB OPEN-SOURCE ECOSYSTEM
+         =================================================================== -->
+    <section id="repos-section" class="apple-section section-black">
+      <div class="shell-container">
+        <div class="apple-section-intro">
+          <span class="section-eyebrow">Live GitHub Telemetry · @earlchirchir</span>
+          <h2 class="section-headline">
+            Open Source.<br />
+            <span class="text-subtle">Continuously shipping.</span>
+          </h2>
+          <p class="section-lead">
+            Monitored in real time via the GitHub REST API. Filter by engineering domain or click any repository card to inspect its architecture and clone command.
           </p>
-          <div class="fc-pipeline">
-            <div class="pipe-node">
-              <span class="pipe-k">SENSING PCB</span>
-              <span class="pipe-v">6× Strain Gauges + HX711 24-Bit ADC</span>
-            </div>
-            <i class="fa-solid fa-arrow-right pipe-arrow"></i>
-            <div class="pipe-node">
-              <span class="pipe-k">EDGE MCU + HMI</span>
-              <span class="pipe-v">ESP32 Tare Logic &amp; Nextion Touch</span>
-            </div>
-            <i class="fa-solid fa-arrow-right pipe-arrow"></i>
-            <div class="pipe-node">
-              <span class="pipe-k">CLOUD PIPELINE</span>
-              <span class="pipe-v">MQTT / SQL Server &amp; Power BI</span>
-            </div>
-          </div>
-          <div class="fc-footer">
-            <div class="fc-metrics">
-              <span><strong>Accuracy Gain:</strong> +40%</span>
-              <span><strong>ADC:</strong> 24-Bit</span>
-              <span><strong>EDA:</strong> KiCAD 2-Layer</span>
-            </div>
-            <div class="fc-links">
-              <a href="https://github.com/earlchirchir/IoT-Weighing-Solution-for-Bulk-Bins" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                <i class="fa-brands fa-github"></i> IoT Telemetry
-              </a>
-              <a href="https://github.com/earlchirchir/Load-Sensor-Modules-PCB" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                <i class="fa-solid fa-microchip"></i> PCB Layout
-              </a>
-            </div>
-          </div>
-        </article>
+        </div>
 
-        <!-- Case Study 3: Odi2 Haptic Assistive Device & Smart Retail Cart -->
-        <article class="flagship-card spotlight-surface">
-          <div class="fc-topbar">
-            <span class="fc-id">ARCH.03 // HAPTIC INTERFACES &amp; SENSOR FUSION</span>
-            <span class="lang-pill lang-cpp">I2C Haptics / RFID</span>
+        <!-- Apple-Style Control Bar -->
+        <div class="apple-repo-controls">
+          <div class="apple-search-pill">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="repo-search" placeholder="Search repositories, MCU, MATLAB, PCB..." aria-label="Search repositories" />
+            <button id="clear-search" class="clear-btn" style="display: none;" aria-label="Clear search">
+              <i class="fa-solid fa-circle-xmark"></i>
+            </button>
           </div>
-          <h3 class="fc-title">Odi2 Deafblind Tactile Haptic Interface &amp; Autonomous Retail Cart</h3>
-          <p class="fc-desc">
-            Developed low-latency assistive communication hardware driving <strong>ERM/LRA haptic actuators</strong> over I2C alongside a capacitive touch matrix. Also engineered an autonomous smart retail cart combining <strong>RFID scanning</strong> with <strong>24-bit load-cell tare verification</strong> to prevent unbilled item anomalies.
+
+          <div class="filter-chips" id="filter-chips" role="tablist" aria-label="Filter repositories by technology">
+            <button class="chip active" data-filter="all">All Projects</button>
+            <button class="chip" data-filter="C++">C / C++</button>
+            <button class="chip" data-filter="MATLAB">MATLAB</button>
+            <button class="chip" data-filter="Jupyter Notebook">Python &amp; ML</button>
+            <button class="chip" data-filter="Hardware">Hardware PCB</button>
+            <button class="chip" data-filter="JavaScript">Web Telemetry</button>
+          </div>
+
+          <div class="apple-sort-pill">
+            <label for="repo-sort" class="sr-only">Sort repositories</label>
+            <select id="repo-sort" aria-label="Sort repositories">
+              <option value="significance" selected>Featured Order</option>
+              <option value="updated">Recently Updated</option>
+              <option value="stars">Most Stars</option>
+              <option value="name">Alphabetical</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dynamic Repositories Grid -->
+        <div class="repos-grid" id="repos-container">
+          <div class="loading-state">
+            <div class="spinner"></div>
+            <p>Syncing live repositories from GitHub (@earlchirchir)...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 05: HACKSTER.IO TECHNICAL PUBLICATION
+         =================================================================== -->
+    <section id="blog-section" class="apple-section section-charcoal">
+      <div class="shell-container">
+        <div class="apple-section-intro">
+          <span class="section-eyebrow">Published Hardware Research · Hackster.io</span>
+          <h2 class="section-headline">
+            Deep-dive teardowns.<br />
+            <span class="text-subtle">Documented to the pinout.</span>
+          </h2>
+          <p class="section-lead">
+            Read the complete hardware architecture, SPI DMA pin mapping, and dual-core FreeRTOS task split directly inside the interactive reader.
           </p>
-          <div class="fc-pipeline">
-            <div class="pipe-node">
-              <span class="pipe-k">INPUT MATRIX</span>
-              <span class="pipe-v">Capacitive Array &amp; RFID Reader</span>
-            </div>
-            <i class="fa-solid fa-arrow-right pipe-arrow"></i>
-            <div class="pipe-node">
-              <span class="pipe-k">CONTROL MCU</span>
-              <span class="pipe-v">C++ State Machine &amp; Tare Fusion</span>
-            </div>
-            <i class="fa-solid fa-arrow-right pipe-arrow"></i>
-            <div class="pipe-node">
-              <span class="pipe-k">ACTUATION</span>
-              <span class="pipe-v">I2C ERM/LRA Haptics &amp; MQTT Sync</span>
-            </div>
-          </div>
-          <div class="fc-footer">
-            <div class="fc-metrics">
-              <span><strong>Bus:</strong> I2C / SPI / UART</span>
-              <span><strong>Award:</strong> 1st Place Innovator</span>
-            </div>
-            <div class="fc-links">
-              <a href="https://github.com/earlchirchir/Odi2-Deafblind-Assistive-Device" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                <i class="fa-brands fa-github"></i> Odi2 Haptics
-              </a>
-              <a href="https://github.com/earlchirchir/Automated-Shopping-Cart" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                <i class="fa-brands fa-github"></i> Smart Cart
-              </a>
-            </div>
-          </div>
-        </article>
+        </div>
+
+        <div id="blog-container"></div>
       </div>
     </section>
 
-    <!-- =====================================================================
-         03 // MULTIDISCIPLINARY ENGINEERING STACK MATRIX
-         ===================================================================== -->
-    <section class="workspace-section" id="skills-matrix">
-      <div class="section-bar">
-        <div class="section-bar-left">
-          <span class="sec-index">03 // TECHNICAL CAPABILITY MATRIX</span>
-          <h2 class="sec-heading">Core Engineering Competencies &amp; Toolchains</h2>
-        </div>
-        <div class="section-bar-right">
-          <span class="sec-tag">Kinematics • RTOS Firmware • EDA • Industrial IoT</span>
-        </div>
-      </div>
-
-      <div class="stack-matrix-grid">
-        <div class="stack-column spotlight-surface">
-          <div class="sc-head">
-            <span class="sc-num">DOM.01</span>
-            <i class="fa-solid fa-robot sc-icon text-signal"></i>
-            <h3>Robotics &amp; Control Theory</h3>
-          </div>
-          <ul class="sc-list">
-            <li><span>Trajectory Planning &amp; Optimization</span> <kbd>MATLAB</kbd></li>
-            <li><span>Bang-Coast-Bang Time Laws</span> <kbd>Optimal</kbd></li>
-            <li><span>6-DOF Forward &amp; Inverse Kinematics</span> <kbd>DH / Analytical</kbd></li>
-            <li><span>Digital Twin &amp; Collision Simulation</span> <kbd>RoboDK 3D</kbd></li>
-            <li><span>Collaborative Manipulators</span> <kbd>ABB GoFa</kbd></li>
-          </ul>
+    <!-- ===================================================================
+         SECTION 06: CAREER EXPERIENCE & ACADEMIC PEDIGREE
+         =================================================================== -->
+    <section id="experience-section" class="apple-section section-black">
+      <div class="shell-container">
+        <div class="apple-section-intro">
+          <span class="section-eyebrow">Track Record &amp; Education</span>
+          <h2 class="section-headline">
+            Proven in industry.<br />
+            <span class="text-subtle">Distinguished in academia.</span>
+          </h2>
         </div>
 
-        <div class="stack-column spotlight-surface">
-          <div class="sc-head">
-            <span class="sc-num">DOM.02</span>
-            <i class="fa-solid fa-microchip sc-icon text-cyan"></i>
-            <h3>Embedded Firmware &amp; RTOS</h3>
-          </div>
-          <ul class="sc-list">
-            <li><span>Bare-Metal &amp; RTOS C/C++</span> <kbd>ESP32 / AVR</kbd></li>
-            <li><span>Dual-Core Task Scheduling</span> <kbd>FreeRTOS</kbd></li>
-            <li><span>Embedded Touch GUI Engines</span> <kbd>LVGL v9</kbd></li>
-            <li><span>Industrial Operator Displays</span> <kbd>Nextion HMI</kbd></li>
-            <li><span>Hardware Buses &amp; 24-Bit ADCs</span> <kbd>SPI / I2C / HX711</kbd></li>
-          </ul>
-        </div>
+        <div class="apple-pedigree-grid">
+          <!-- Column A: Industry Track Record -->
+          <div class="pedigree-column">
+            <h3 class="pedigree-col-heading"><i class="fa-solid fa-briefcase"></i> Industry Experience</h3>
 
-        <div class="stack-column spotlight-surface">
-          <div class="sc-head">
-            <span class="sc-num">DOM.03</span>
-            <i class="fa-solid fa-drafting-compass sc-icon text-emerald"></i>
-            <h3>3D CAD &amp; PCB Hardware</h3>
-          </div>
-          <ul class="sc-list">
-            <li><span>Parametric 3D Mechanical CAD</span> <kbd>Siemens NX</kbd></li>
-            <li><span>Electro-Mechanical Assemblies</span> <kbd>SolidWorks / Inventor</kbd></li>
-            <li><span>Schematic Capture &amp; PCB Layout</span> <kbd>KiCAD / Eagle</kbd></li>
-            <li><span>Analog Signal Conditioning</span> <kbd>FR-4 2-Layer</kbd></li>
-            <li><span>SMD / Through-Hole Prototyping</span> <kbd>DFM / Soldering</kbd></li>
-          </ul>
-        </div>
+            <article class="apple-pedigree-card spotlight-surface">
+              <div class="pedigree-meta">
+                <span class="pedigree-date">Feb 2023 – Dec 2023</span>
+                <span class="pedigree-badge badge-emerald">+40% Telemetry Accuracy</span>
+              </div>
+              <h4>IoT Systems Engineer</h4>
+              <p class="pedigree-org">Savannah Rovers · Kericho, Kenya</p>
+              <ul class="pedigree-list">
+                <li><strong>Industrial IoT Deployment:</strong> Designed and deployed embedded telemetry and bulk-weighing nodes for tea-picking machinery using <strong>ESP32, Arduino Nano, HX711 load cells, and Nextion HMIs</strong>, boosting remote reporting accuracy by <strong>~40%</strong>.</li>
+                <li><strong>Custom 2-Layer PCB Engineering:</strong> Engineered mixed-signal schematics and 2-layer FR-4 PCBs in <strong>KiCAD &amp; Autodesk Eagle</strong> with analog filtering for harsh agricultural vibration environments.</li>
+                <li><strong>Cloud &amp; BI Integration:</strong> Built JSON/MQTT/HTTP pipelines streaming field sensor diagnostics into <strong>SQL databases and Power BI dashboards</strong>.</li>
+              </ul>
+            </article>
 
-        <div class="stack-column spotlight-surface">
-          <div class="sc-head">
-            <span class="sc-num">DOM.04</span>
-            <i class="fa-solid fa-network-wired sc-icon text-amber"></i>
-            <h3>Industrial IoT &amp; Data Pipelines</h3>
-          </div>
-          <ul class="sc-list">
-            <li><span>Wireless Telemetry Protocols</span> <kbd>MQTT / HTTP / BLE</kbd></li>
-            <li><span>Database &amp; API Architecture</span> <kbd>SQL / Postman</kbd></li>
-            <li><span>Real-Time Plant Analytics</span> <kbd>Power BI</kbd></li>
-            <li><span>Machine Learning &amp; Regression</span> <kbd>Python / Jupyter</kbd></li>
-            <li><span>Plant Automation &amp; Hydraulics</span> <kbd>PLC / Maintenance</kbd></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+            <article class="apple-pedigree-card spotlight-surface">
+              <div class="pedigree-meta">
+                <span class="pedigree-date">May 2021 – Aug 2021</span>
+                <span class="pedigree-badge">Preventive Maintenance</span>
+              </div>
+              <h4>Mechanical Engineering Intern</h4>
+              <p class="pedigree-org">Ekaterra Tea Kenya PLC (Unilever Tea) · Kericho, Kenya</p>
+              <ul class="pedigree-list">
+                <li><strong>Industrial Factory Automation:</strong> Executed root-cause mechanical diagnostics, conveyor alignment, and steam-boiler servicing across automated processing lines, cutting unplanned downtime by <strong>15%</strong>.</li>
+                <li><strong>Fabrication &amp; QA:</strong> Machined replacement components via lathe, milling, and TIG/MIG welding to restore high-throughput machinery.</li>
+              </ul>
+            </article>
 
-    <!-- =====================================================================
-         04 // INTERACTIVE ENGINEERING REPOSITORY INDEX & CODEBASE EXPLORER
-         ===================================================================== -->
-    <section class="workspace-section" id="repos-section">
-      <div class="section-bar">
-        <div class="section-bar-left">
-          <span class="sec-index">04 // LIVE GITHUB REPOSITORY LEDGER</span>
-          <h2 class="sec-heading">Engineering Codebases &amp; Hardware Schematics</h2>
-        </div>
-        <div class="section-bar-right">
-          <span id="repo-count-badge" class="sec-tag">11 Indexed Projects</span>
-        </div>
-      </div>
-
-      <!-- Command Filter Bar -->
-      <div class="ledger-controls">
-        <div class="search-box">
-          <i class="fa-solid fa-terminal search-icon"></i>
-          <input type="text" id="search-input" placeholder="Filter ledger by keyword, MCU, or domain (e.g., ESP32, ABB, PCB, MQTT, MATLAB)..." aria-label="Search repositories" />
-          <button id="clear-search" type="button" class="clear-btn" style="display: none;" aria-label="Clear search"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-
-        <div class="filter-chips" id="filter-chips" role="group" aria-label="Filter by technology">
-          <button type="button" class="chip active" data-filter="all">ALL_SYSTEMS</button>
-          <button type="button" class="chip" data-filter="C++">C++ / FIRMWARE</button>
-          <button type="button" class="chip" data-filter="MATLAB">MATLAB / KINEMATICS</button>
-          <button type="button" class="chip" data-filter="Hardware">PCB / HARDWARE</button>
-          <button type="button" class="chip" data-filter="JavaScript">WEB TELEMETRY</button>
-          <button type="button" class="chip" data-filter="Jupyter Notebook">PYTHON / ML</button>
-        </div>
-
-        <div class="sort-dropdown">
-          <label for="sort-select">SORT:</label>
-          <select id="sort-select" aria-label="Sort repositories">
-            <option value="featured" selected>SIGNIFICANCE</option>
-            <option value="updated">LATEST_COMMIT</option>
-            <option value="size">CODEBASE_SIZE</option>
-            <option value="name">ALPHABETICAL</option>
-          </select>
-        </div>
-      </div>
-
-      <div id="repos-container" class="repos-grid">
-        <div class="loading-state">
-          <div class="spinner"></div>
-          <p>Synchronizing GitHub engineering ledger...</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         05 // HACKSTER.IO HARDWARE PUBLICATION & LIVE RF SPECTRUM ANALYZER
-         ===================================================================== -->
-    <section class="workspace-section" id="blog-section">
-      <div class="section-bar">
-        <div class="section-bar-left">
-          <span class="sec-index">05 // TECHNICAL PUBLICATIONS &amp; HARDWARE GUIDES</span>
-          <h2 class="sec-heading">Published Firmware Deep-Dives on Hackster.io</h2>
-        </div>
-        <div class="section-bar-right">
-          <a href="https://www.hackster.io/earl-chirchir" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-            <i class="fa-solid fa-microchip"></i> Hackster.io Profile <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-        </div>
-      </div>
-
-      <div id="blog-container">
-        <!-- Populated dynamically by src/app.js -->
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         06 // INDUSTRIAL TRACK RECORD, EDUCATION & COMMENDATIONS
-         ===================================================================== -->
-    <section class="workspace-section" id="experience-section">
-      <div class="section-bar">
-        <div class="section-bar-left">
-          <span class="sec-index">06 // VERIFIED CAREER &amp; ACADEMIC TIMELINE</span>
-          <h2 class="sec-heading">Industrial Experience, Degrees &amp; Official Commendations</h2>
-        </div>
-        <div class="section-bar-right">
-          <span class="sec-tag">3+ Years Industrial Engineering • Verified PDFs</span>
-        </div>
-      </div>
-
-      <div class="timeline-dual-grid" id="applied-engineering">
-        <!-- Column 1: Academic Distinction -->
-        <div class="timeline-col">
-          <div class="tc-col-header">
-            <i class="fa-solid fa-graduation-cap text-cyan"></i>
-            <span>HIGHER EDUCATION &amp; RESEARCH</span>
+            <article class="apple-pedigree-card spotlight-surface">
+              <div class="pedigree-meta">
+                <span class="pedigree-date">Jan 2024 – Present</span>
+                <span class="pedigree-badge">Enhanced DBS Checked</span>
+              </div>
+              <h4>Support Worker (Part-Time Concurrent with MSc)</h4>
+              <p class="pedigree-org">Choice Support · Epsom, Surrey, UK</p>
+              <ul class="pedigree-list">
+                <li><strong>High-Trust UK Regulated Operations:</strong> Deliver person-centered support, medication administration, and safeguarding compliance in regulated UK care environments alongside postgraduate engineering research.</li>
+              </ul>
+            </article>
           </div>
 
-          <div class="dossier-card spotlight-surface">
-            <div class="dc-meta">
-              <span class="dc-period">2024 – 2025 • LONDON, UK</span>
-              <span class="dc-badge badge-emerald">PASSED WITH DISTINCTION</span>
-            </div>
-            <h3 class="dc-title">MSc Mechatronic Systems</h3>
-            <span class="dc-org">Kingston University London</span>
-            <p class="dc-desc">
-              Specialized in analytical robot kinematics, trajectory optimization, and embedded control systems. Achieved <strong>81% (Grade A)</strong> on the ABB GoFa CRB 15000 dissertation, <strong>85% (Grade A)</strong> in Quality Management, and <strong>79% (Grade A)</strong> in Embedded Control Implementation.
-            </p>
-            <div class="dc-actions">
-              <a href="Kingston_University_MSc_HEAR_Transcript.pdf" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                <i class="fa-solid fa-file-pdf"></i> Official HEAR Transcript
-              </a>
-              <a href="Kingston_University_MSc_Award_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                <i class="fa-solid fa-file-pdf"></i> MSc Award Certificate
-              </a>
-            </div>
-          </div>
+          <!-- Column B: Academic Degrees -->
+          <div class="pedigree-column">
+            <h3 class="pedigree-col-heading"><i class="fa-solid fa-graduation-cap"></i> Academic Credentials</h3>
 
-          <div class="dossier-card spotlight-surface">
-            <div class="dc-meta">
-              <span class="dc-period">5-YEAR ENGINEERING DEGREE</span>
-              <span class="dc-badge badge-cyan">2:1 UPPER SECOND HONOURS</span>
-            </div>
-            <h3 class="dc-title">BSc Mechatronic Engineering</h3>
-            <span class="dc-org">Jomo Kenyatta University of Agriculture &amp; Technology (JKUAT)</span>
-            <p class="dc-desc">
-              Comprehensive 5-year foundation in microcontroller architectures (C/C++), electro-mechanical design, sensor signal conditioning, hydraulics, and PLC automation. Co-led the Engineering Innovation Club.
-            </p>
-            <div class="dc-actions">
-              <a href="JKUAT_BSc_Mechatronic_Engineering_Degree_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                <i class="fa-solid fa-file-pdf"></i> BSc Degree Certificate
-              </a>
-            </div>
-          </div>
-        </div>
+            <article class="apple-pedigree-card spotlight-surface">
+              <div class="pedigree-meta">
+                <span class="pedigree-date">Jan 2024 – Jan 2025</span>
+                <span class="pedigree-badge badge-blue">Distinction · 81% (Grade A)</span>
+              </div>
+              <h4>MSc Mechatronic Systems</h4>
+              <p class="pedigree-org">Kingston University London · United Kingdom</p>
+              <ul class="pedigree-list">
+                <li><strong>Master's Dissertation (81% Grade A):</strong> <em>Kinematics, Dynamics &amp; Time-Optimal Trajectory Planning of the 6-DOF ABB GoFa CRB 15000 Collaborative Robot</em> — achieved a <strong>~25% cycle time reduction</strong> in MATLAB &amp; RoboDK 3D.</li>
+                <li><strong>Core Modules:</strong> Robotics &amp; Autonomous Systems, Mechatronic Design &amp; Embedded Control, Digital Signal Processing, CAD/CAM/FEA.</li>
+              </ul>
+              <div class="pedigree-links">
+                <a href="Earl_Chirchir_MSc_Certificate_Distinction.pdf" target="_blank" rel="noopener noreferrer" class="apple-chevron-link">
+                  MSc Certificate (PDF) <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="Kingston_University_MSc_HEAR_Transcript.pdf" target="_blank" rel="noopener noreferrer" class="apple-chevron-link">
+                  HEAR Transcript (PDF) <i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </div>
+            </article>
 
-        <!-- Column 2: Industrial Experience & Commendations -->
-        <div class="timeline-col" id="industry-commendations">
-          <div class="tc-col-header">
-            <i class="fa-solid fa-industry text-signal"></i>
-            <span>INDUSTRIAL DEPLOYMENTS &amp; COMMENDATIONS</span>
-          </div>
-
-          <div class="dossier-card spotlight-surface">
-            <div class="dc-meta">
-              <span class="dc-period">2022 – 2024 • INDUSTRIAL R&amp;D</span>
-              <span class="dc-badge badge-signal">LEAD EMBEDDED &amp; IIoT</span>
-            </div>
-            <h3 class="dc-title">Development Engineer — OJE Engineering</h3>
-            <span class="dc-org">Industrial Telemetry, Nextion HMIs &amp; Automated Weighing</span>
-            <p class="dc-desc">
-              Engineered and maintained remote IoT data-logging hardware for mechanized tea-harvesting and industrial weighing bins across 2 manufacturing plants. Built Nextion touchscreen HMIs and SQL/Power BI telemetry pipelines (+40% data accuracy).
-            </p>
-            <div class="dc-actions">
-              <a href="https://github.com/earlchirchir/IoT-Weighing-Solution-for-Bulk-Bins" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                <i class="fa-brands fa-github"></i> Inspect Industrial IoT Codebase
-              </a>
-            </div>
-          </div>
-
-          <div class="dossier-card spotlight-surface">
-            <div class="dc-meta">
-              <span class="dc-period">NATIONAL REGULATOR &amp; PLANT VERIFICATION</span>
-              <span class="dc-badge badge-steel">OFFICIAL LETTERS</span>
-            </div>
-            <h3 class="dc-title">EPRA Regulatory Engineering &amp; James Finlay Operations</h3>
-            <span class="dc-org">Energy &amp; Petroleum Regulatory Authority • James Finlay Ltd</span>
-            <p class="dc-desc">
-              Backed by official commendations for electrical metering verification and regulatory compliance at <strong>EPRA</strong>, high-throughput electro-hydraulic &amp; PLC plant maintenance at <strong>James Finlay</strong>, and the <strong>1st Place Intervarsity Engineering Innovator Award</strong>.
-            </p>
-            <div class="dc-actions">
-              <a href="EPRA_Official_Recommendation_Letter.pdf?v=2026" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                <i class="fa-solid fa-file-pdf"></i> EPRA Recommendation
-              </a>
-              <a href="James_Finlay_Industrial_Equipment_Maintenance_Verification.pdf?v=2026" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                <i class="fa-solid fa-file-pdf"></i> James Finlay Letter
-              </a>
-              <a href="https://github.com/earlchirchir/Eggcellent-Automated-Chicken-Coop" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-sm-mono">
-                <i class="fa-solid fa-trophy text-amber"></i> 1st Place Award Project
-              </a>
-            </div>
+            <article class="apple-pedigree-card spotlight-surface">
+              <div class="pedigree-meta">
+                <span class="pedigree-date">Sep 2017 – Dec 2022</span>
+                <span class="pedigree-badge">Upper Second-Class (2:1)</span>
+              </div>
+              <h4>BSc Biomechanical &amp; Processing Engineering</h4>
+              <p class="pedigree-org">Jomo Kenyatta University of Agriculture &amp; Technology (JKUAT)</p>
+              <ul class="pedigree-list">
+                <li><strong>Senior Design Thesis:</strong> <em>Design, Structural FEA &amp; Fabrication of an Automated 3-Roller Sugarcane Crusher</em> — achieved <strong>85% extraction efficiency</strong> under <strong>2.5 kN roller force</strong>.</li>
+                <li><strong>1st Place Award:</strong> Won 1st Place for the <em>Eggcellent Automated Smart Agricultural Coop</em> IoT controller.</li>
+              </ul>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================================
-         07 // UK WORK AUTHORIZATION & COMPLIANCE VAULT
-         ===================================================================== -->
-    <section class="workspace-section" id="compliance-section">
-      <div class="compliance-vault spotlight-surface">
-        <div class="cv-vault-head">
-          <div>
-            <span class="sec-index">07 // UK EMPLOYMENT CLEARANCE &amp; COMPLIANCE VAULT</span>
-            <h2 class="cv-vault-title"><i class="fa-solid fa-shield-halved text-emerald"></i> Unrestricted UK Right to Work &amp; Background Verification</h2>
-          </div>
-          <span class="status-chip-live">
-            <span class="pulse-ring"></span> NO VISA SPONSORSHIP REQUIRED
-          </span>
+    <!-- ===================================================================
+         SECTION 07: CREDENTIALS, CV & UK WORK AUTHORIZATION
+         =================================================================== -->
+    <section id="compliance-section" class="apple-section section-charcoal">
+      <div class="shell-container">
+        <div class="apple-section-intro">
+          <span class="section-eyebrow">Verification &amp; Onboarding</span>
+          <h2 class="section-headline">
+            Ready from day one.<br />
+            <span class="text-subtle">Zero sponsorship friction.</span>
+          </h2>
+          <p class="section-lead">
+            Instant access to my ATS-ready CV, official Kingston University MSc Distinction transcripts, and GOV.UK Graduate Visa right-to-work verification.
+          </p>
         </div>
 
-        <div class="cv-vault-grid">
-          <a href="GOVUK_Right_to_Work_Share_Code_WJA_R3P_7LZ.pdf?v=2026" target="_blank" rel="noopener noreferrer" class="vault-doc-card">
-            <div class="vdc-icon"><i class="fa-solid fa-passport"></i></div>
-            <div class="vdc-body">
-              <span class="vdc-code">GOV.UK SHARE CODE: WJA R3P 7LZ</span>
-              <span class="vdc-name">UK Graduate Visa — Full Work Rights</span>
-              <span class="vdc-sub">Inspect Official GOV.UK Verification PDF <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-            </div>
-          </a>
+        <div class="apple-vault-grid">
+          <!-- Card 1: Engineering CV & Academic Transcripts -->
+          <div class="apple-vault-card spotlight-surface">
+            <span class="bento-eyebrow">Curriculum Vitae &amp; Transcripts</span>
+            <h3>Engineering Resume &amp; MSc Distinction Dossier</h3>
+            <p>Download the complete PDF curriculum vitae or inspect official Kingston University London degree certificates.</p>
 
-          <a href="UK_Basic_DBS_Check_Certificate.pdf?v=2026" target="_blank" rel="noopener noreferrer" class="vault-doc-card">
-            <div class="vdc-icon"><i class="fa-solid fa-user-shield"></i></div>
-            <div class="vdc-body">
-              <span class="vdc-code">DISCLOSURE &amp; BARRING SERVICE</span>
-              <span class="vdc-name">UK Basic DBS Certificate</span>
-              <span class="vdc-sub">Clean UK Police Background Record PDF <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            <div class="vault-specs-table">
+              <div class="vault-row">
+                <span>Postgraduate Degree</span>
+                <strong>MSc Mechatronic Systems (Distinction · 81%)</strong>
+              </div>
+              <div class="vault-row">
+                <span>Undergraduate Degree</span>
+                <strong>BSc Engineering (2:1 Upper Second-Class)</strong>
+              </div>
+              <div class="vault-row">
+                <span>Target Engineering Roles</span>
+                <strong>Robotics, Controls, Embedded Firmware &amp; IIoT</strong>
+              </div>
+              <div class="vault-row">
+                <span>Location &amp; Mobility</span>
+                <strong>Epsom / Greater London · UK-Wide Relocation</strong>
+              </div>
             </div>
-          </a>
 
-          <a href="Engineers_Board_of_Kenya_EBK_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="vault-doc-card">
-            <div class="vdc-icon"><i class="fa-solid fa-id-card"></i></div>
-            <div class="vdc-body">
-              <span class="vdc-code">PROFESSIONAL ACCREDITATION</span>
-              <span class="vdc-name">Engineers Board of Kenya (EBK)</span>
-              <span class="vdc-sub">Registered Graduate Engineer Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            <div class="vault-cta-row">
+              <a href="Earl_Chirchir_CV.pdf" target="_blank" rel="noopener noreferrer" class="apple-pill-btn apple-pill-lg">
+                <i class="fa-solid fa-file-pdf"></i> Download CV (PDF)
+              </a>
+              <a href="cv.html" class="apple-pill-btn apple-pill-glass">
+                Web Resume
+              </a>
+              <a href="Earl_Chirchir_MSc_Certificate_Distinction.pdf" target="_blank" rel="noopener noreferrer" class="apple-pill-btn apple-pill-glass">
+                MSc Certificate
+              </a>
             </div>
-          </a>
+          </div>
+
+          <!-- Card 2: UK Right to Work & Compliance -->
+          <div class="apple-vault-card spotlight-surface">
+            <span class="bento-eyebrow text-apple-green">GOV.UK Verified Work Clearance</span>
+            <h3>UK Graduate Visa — No Sponsorship Required</h3>
+            <p>Full, unrestricted right to work in any engineering role across the United Kingdom with immediate onboarding availability.</p>
+
+            <div class="sharecode-apple-box">
+              <div>
+                <span class="sc-caption">GOV.UK RIGHT TO WORK SHARE CODE</span>
+                <strong class="sc-digits">WJA R3P 7LZ</strong>
+              </div>
+              <a href="GOVUK_Right_to_Work_Share_Code_WJA_R3P_7LZ.pdf" target="_blank" rel="noopener noreferrer" class="apple-pill-btn apple-pill-sm">
+                Open GOV.UK PDF
+              </a>
+            </div>
+
+            <div class="vault-specs-table">
+              <div class="vault-row">
+                <span>Visa Category</span>
+                <strong class="text-apple-green">UK Graduate Route (Valid until 11 Nov 2027)</strong>
+              </div>
+              <div class="vault-row">
+                <span>Employer Sponsorship</span>
+                <strong>Zero CoS Required for Initial Onboarding</strong>
+              </div>
+              <div class="vault-row">
+                <span>Background Clearance</span>
+                <strong>Enhanced DBS Checked · Safeguarding Level 2</strong>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- =======================================================================
-       INTERACTIVE COMMAND PALETTE MODAL (Ctrl+K / /)
-       ======================================================================= -->
-  <div id="cmd-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cmd-modal-title" style="display: none;">
-    <div class="modal-card cmd-palette-card">
-      <div class="cmd-input-header">
-        <i class="fa-solid fa-terminal text-signal"></i>
-        <input type="text" id="cmd-search-input" placeholder="Type a command or jump to section, project, or PDF document..." autocomplete="off" aria-label="Command palette search" />
-        <button type="button" id="cmd-modal-close" class="cmd-esc-btn">ESC</button>
+  <!-- =====================================================================
+       MODALS: REPOSITORY INSPECTOR, HACKSTER READER, CONTACT, COMMAND (⌘K)
+       ===================================================================== -->
+  <!-- 1. Repository Inspector Modal -->
+  <div class="modal-overlay" id="repo-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-header">
+        <span class="lang-pill" id="modal-language-badge">C++</span>
+        <h3 id="modal-title">Repository Name</h3>
       </div>
-      <div id="cmd-results-list" class="cmd-results-list">
-        <!-- Populated dynamically -->
+      <div id="modal-description" class="modal-description"></div>
+
+      <div class="modal-meta">
+        <div class="meta-item"><i class="fa-regular fa-star"></i> <span id="modal-stars">0</span> Stars</div>
+        <div class="meta-item"><i class="fa-solid fa-code-fork"></i> <span id="modal-forks">0</span> Forks</div>
+        <div class="meta-item"><i class="fa-solid fa-hard-drive"></i> <span id="modal-size">0 KB</span></div>
+        <div class="meta-item"><i class="fa-regular fa-clock"></i> Updated <span id="modal-updated">-</span></div>
       </div>
-      <div class="cmd-footer">
-        <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
-        <span><kbd>↵</kbd> to execute</span>
-        <span><kbd>ESC</kbd> to dismiss</span>
+
+      <div class="clone-box">
+        <label for="clone-url-input">Clone via Git CLI</label>
+        <div class="clone-input-group">
+          <input type="text" id="clone-url-input" readonly value="git clone ..." />
+          <button id="copy-clone-btn" class="apple-pill-btn apple-pill-sm" title="Copy to clipboard">
+            <i class="fa-regular fa-copy"></i> Copy
+          </button>
+        </div>
+        <span id="copy-toast" class="toast-msg" style="display: none;">
+          <i class="fa-solid fa-check"></i> Copied to clipboard
+        </span>
+      </div>
+
+      <div class="modal-actions">
+        <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="apple-pill-btn apple-pill-lg">
+          <i class="fa-brands fa-github"></i> View Repository on GitHub
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- Article Detail Modal Overlay -->
-  <div id="article-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="article-modal-title" style="display: none;">
+  <!-- 2. Hackster Article Reader Modal -->
+  <div class="modal-overlay" id="article-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="article-modal-title">
     <div class="modal-card article-modal-card">
-      <button id="article-modal-close" type="button" class="modal-close-btn" aria-label="Close article modal"><i class="fa-solid fa-xmark"></i></button>
+      <button class="modal-close-btn" id="article-modal-close" aria-label="Close article reader">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
 
       <div class="article-modal-header">
         <div class="article-modal-meta">
-          <span class="lang-pill lang-cpp"><i class="fa-solid fa-microchip"></i> Hackster.io Technical Guide</span>
-          <span id="article-modal-date" class="article-meta-item"><i class="fa-solid fa-calendar-days"></i> July 2026</span>
-          <span id="article-modal-readtime" class="article-meta-item"><i class="fa-solid fa-clock"></i> 4 min read</span>
+          <span class="lang-pill lang-cpp"><i class="fa-solid fa-microchip"></i> Hackster.io Feature</span>
+          <span id="article-modal-date" class="article-meta-item"></span>
+          <span id="article-modal-readtime" class="article-meta-item"></span>
         </div>
-        <h2 id="article-modal-title" class="article-modal-heading"></h2>
+        <h2 id="article-modal-title" class="article-modal-heading">Article Title</h2>
         <p id="article-modal-pitch" class="article-modal-subtitle"></p>
       </div>
 
       <div id="article-modal-content" class="markdown-article-body"></div>
 
       <div class="article-modal-footer">
-        <a id="article-hackster-link" href="https://www.hackster.io/earl-chirchir" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-signal">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Read Original on Hackster.io
+        <a id="article-hackster-link" href="https://www.hackster.io/earl-chirchir" target="_blank" rel="noopener noreferrer" class="apple-pill-btn apple-pill-lg">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> View Original on Hackster.io
         </a>
-        <button id="article-close-btn-bottom" type="button" class="btn-industrial btn-steel">Close Window</button>
+        <button id="article-close-btn-bottom" class="apple-pill-btn apple-pill-glass">
+          Close Reader
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- Repo Detail Modal -->
-  <div id="repo-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="display: none;">
-    <div class="modal-card">
-      <button id="modal-close" type="button" class="modal-close-btn" aria-label="Close project modal"><i class="fa-solid fa-xmark"></i></button>
+  <!-- 3. Direct Contact Modal -->
+  <div class="modal-overlay" id="contact-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="modal-card contact-modal-card">
+      <button class="modal-close-btn" id="contact-modal-close" aria-label="Close contact dialog">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <div class="modal-header">
-        <span id="modal-language-badge" class="lang-pill">Language</span>
-        <h3 id="modal-title">Repository Title</h3>
-      </div>
-      <div id="modal-description" class="modal-description"></div>
-
-      <div class="modal-meta">
-        <div class="meta-item"><i class="fa-solid fa-database"></i> Size: <span id="modal-size">0 KB</span></div>
-        <div class="meta-item"><i class="fa-solid fa-clock"></i> Updated: <span id="modal-updated">--</span></div>
-        <div class="meta-item" style="display:none;"><span id="modal-stars">0</span><span id="modal-forks">0</span></div>
+        <span class="bento-eyebrow">Direct Engineering Contact</span>
+        <h3 id="contact-modal-title">Get in Touch with Earl Chirchir</h3>
       </div>
 
-      <div class="clone-box">
-        <label for="clone-url-input">GIT CLONE COMMAND:</label>
-        <div class="clone-input-group">
-          <input type="text" id="clone-url-input" readonly />
-          <button id="copy-clone-btn" type="button" class="btn-industrial btn-steel btn-sm-mono">
-            <i class="fa-regular fa-copy"></i> Copy
-          </button>
-        </div>
-        <span id="copy-toast" class="toast-msg" style="display: none;"><i class="fa-solid fa-check"></i> Copied to clipboard!</span>
-      </div>
-
-      <div class="modal-actions">
-        <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-industrial btn-signal">
-          <i class="fa-brands fa-github"></i> Open Source Repository on GitHub
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Contact Modal -->
-  <div id="contact-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="contact-modal-heading" style="display: none;">
-    <div class="modal-card">
-      <button id="contact-modal-close" type="button" class="modal-close-btn" aria-label="Close contact modal"><i class="fa-solid fa-xmark"></i></button>
-      <div class="modal-header">
-        <span class="lang-pill lang-cyan"><i class="fa-solid fa-satellite-dish"></i> DIRECT TRANSMISSION</span>
-        <h3 id="contact-modal-heading">Contact Earl Chirchir</h3>
-      </div>
-      <p class="modal-description">Hiring for a Robotics, Mechatronics, Control Systems, or Embedded Firmware role in the UK? Reach out directly:</p>
+      <p class="modal-description">
+        Available immediately for <strong>Robotics, Controls, Mechatronics, and Embedded Firmware</strong> roles across the UK (Graduate Visa valid until Nov 2027 — no sponsorship required).
+      </p>
 
       <div class="contact-modal-options">
-        <a href="mailto:earlchirchir@outlook.com" class="contact-option-btn">
+        <a href="mailto:earlchirchir@outlook.com?subject=Engineering%20Opportunity%20%E2%80%94%20Earl%20Chirchir" class="contact-option-btn">
           <div class="option-icon"><i class="fa-solid fa-envelope"></i></div>
           <div class="option-info">
             <span class="option-label">Direct Email</span>
             <span class="option-val">earlchirchir@outlook.com</span>
           </div>
-          <i class="fa-solid fa-arrow-right option-arrow"></i>
+          <i class="fa-solid fa-chevron-right option-arrow"></i>
         </a>
 
-        <a href="tel:+447425243365" class="contact-option-btn">
+        <a href="tel:+447760749312" class="contact-option-btn">
           <div class="option-icon"><i class="fa-solid fa-phone"></i></div>
           <div class="option-info">
-            <span class="option-label">Direct Call / WhatsApp (UK)</span>
-            <span class="option-val">+44 7425 243365</span>
+            <span class="option-label">UK Mobile</span>
+            <span class="option-val">+44 7760 749312</span>
           </div>
-          <i class="fa-solid fa-arrow-right option-arrow"></i>
+          <i class="fa-solid fa-chevron-right option-arrow"></i>
         </a>
 
-        <a href="https://www.linkedin.com/in/earl-chirchir/" target="_blank" rel="noopener noreferrer" class="contact-option-btn">
-          <div class="option-icon"><i class="fa-brands fa-linkedin"></i></div>
+        <a href="https://www.linkedin.com/in/earl-chirchir-087122177/" target="_blank" rel="noopener noreferrer" class="contact-option-btn">
+          <div class="option-icon"><i class="fa-brands fa-linkedin-in"></i></div>
           <div class="option-info">
-            <span class="option-label">LinkedIn Message</span>
+            <span class="option-label">LinkedIn Profile</span>
             <span class="option-val">linkedin.com/in/earl-chirchir</span>
           </div>
           <i class="fa-solid fa-arrow-up-right-from-square option-arrow"></i>
         </a>
       </div>
+    </div>
+  </div>
 
-      <div class="modal-meta" style="margin-bottom:0;">
-        <div class="meta-item"><i class="fa-solid fa-location-dot"></i> Swansea SA1 8BB, Wales, UK</div>
-        <div class="meta-item"><i class="fa-solid fa-passport"></i> Share Code: WJA R3P 7LZ</div>
+  <!-- 4. Spotlight Command Search Modal (⌘K / Ctrl+K) -->
+  <div class="modal-overlay" id="cmd-modal" style="display: none;" role="dialog" aria-modal="true" aria-label="Spotlight Search">
+    <div class="modal-card cmd-palette-card">
+      <div class="cmd-input-header">
+        <i class="fa-solid fa-magnifying-glass text-apple-blue"></i>
+        <input type="text" id="cmd-search-input" placeholder="Search sections, repositories, or credentials..." autocomplete="off" />
+        <button type="button" id="cmd-modal-close" class="cmd-esc-btn">ESC</button>
+      </div>
+      <div id="cmd-results-list" class="cmd-results-list"></div>
+      <div class="cmd-footer">
+        <span><kbd>↑</kbd> <kbd>↓</kbd> Navigate</span>
+        <span><kbd>↵</kbd> Open</span>
+        <span><kbd>ESC</kbd> Dismiss</span>
       </div>
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="shell-container footer-content">
-      <div class="footer-brand">
-        <span class="brand-monogram">EC</span>
-        <p>© <span id="year">2026</span> <strong>Earl Chirchir</strong> • Precision Robotics &amp; Embedded Systems Engineering.</p>
+  <!-- =====================================================================
+       APPLE MINIMAL FOOTER
+       ===================================================================== -->
+  <footer class="apple-footer">
+    <div class="shell-container">
+      <div class="footer-note">
+        <p>1. ~25% cycle time reduction measured in MATLAB &amp; RoboDK 3D comparing closed-form Bang-Coast-Bang velocity scheduling against unblended step inputs on the 6-DOF ABB GoFa CRB 15000 collaborative robot (Kingston University London MSc Dissertation, Grade A · 81%).</p>
+        <p>2. Live repository metrics are fetched dynamically on load from the GitHub REST API (<code>api.github.com/users/earlchirchir/repos</code>).</p>
       </div>
-      <div class="footer-links">
-        <a href="cv.html"><i class="fa-solid fa-print"></i> Web CV</a>
-        <a href="Earl_Chirchir_CV.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i> PDF CV</a>
-        <a href="mailto:earlchirchir@outlook.com"><i class="fa-solid fa-envelope"></i> Email</a>
-        <a id="footer-hackster-link" href="https://www.hackster.io/earl-chirchir" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-microchip"></i> Hackster.io</a>
-        <a id="footer-linkedin-link" href="https://www.linkedin.com/in/earl-chirchir/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/earlchirchir" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          Copyright &copy; <span id="current-year">2026</span> Earl Chirchir. All rights reserved. · Epsom, Surrey / Greater London, UK.
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/earlchirchir" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/earl-chirchir-087122177/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.hackster.io/earl-chirchir" target="_blank" rel="noopener noreferrer">Hackster.io</a>
+          <a href="Earl_Chirchir_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+          <a href="cv.html">Web Resume</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script type="module" src="./src/app.js"></script>
+  <script type="module" src="/src/app.js"></script>
 </body>
 </html>
